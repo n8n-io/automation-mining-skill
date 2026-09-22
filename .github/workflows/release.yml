@@ -1,0 +1,72 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  secrets:
+    uses: ./.github/workflows/secrets.yml
+  build:
+    needs: secrets
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Check release commit and version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          git merge-base --is-ancestor HEAD origin/main
+          python scripts/package.py check "$RELEASE_TAG"
+      - run: python -m unittest discover -s scripts -p 'test_*.py'
+      - run: python scripts/package.py build
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-packages-${{ matrix.os }}
+          path: dist/
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: release-packages-*
+          path: packages/
+      - name: Compare packages and verify checksums
+        run: |
+          diff -u packages/release-packages-ubuntu-latest/SHA256SUMS packages/release-packages-windows-latest/SHA256SUMS
+          mkdir dist
+          cp packages/release-packages-ubuntu-latest/* dist/
+          cd dist
+          sha256sum -c SHA256SUMS
+      - name: Publish release files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          assets=("dist/automation-mining-${RELEASE_TAG}.zip" "dist/automation-mining-plugin-${RELEASE_TAG}.zip" "dist/automation-mining-paper-${RELEASE_TAG}.pdf" dist/SHA256SUMS)
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            test "$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)" = true
+            gh release upload "$RELEASE_TAG" "${assets[@]}" --clobber
+            gh release edit "$RELEASE_TAG" --draft=false --target "$GITHUB_SHA" --notes-file dist/RELEASE_NOTES.md
+          else
+            gh release create "$RELEASE_TAG" "${assets[@]}" --verify-tag --title "Automation mining $RELEASE_TAG" --notes-file dist/RELEASE_NOTES.md
+          fi

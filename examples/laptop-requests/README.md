@@ -53,7 +53,8 @@ successful automations. They do not establish manual work that a build can remov
 python3 scripts/check_example.py routine-report.json --routine-only
 ```
 
-The example checks basic behavior. It does not measure proposal quality in real use.
+The example checks basic behavior. It does not replace the larger
+[benchmark and study](../../METHOD.md).
 
 ## Run the tests
 

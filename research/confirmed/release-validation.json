@@ -1,0 +1,795 @@
+{
+  "score_replays": {
+    "test": 342,
+    "validation": 240
+  },
+  "dataset": [
+    {
+      "ref": "refinement-test-001",
+      "sha256": "a8482774423515768bdcc4b305ff235227f6d10806c06c07b818fd35afc0fa35"
+    },
+    {
+      "ref": "refinement-test-002",
+      "sha256": "86ebc56e945bec95df024f7f1ff5995401385d080459409e4e03f3ccaf499229"
+    },
+    {
+      "ref": "refinement-test-004",
+      "sha256": "c199797615d44a839fa70dfd9aab9612b07bd856de081df760b1c8e296f950b2"
+    },
+    {
+      "ref": "refinement-test-006",
+      "sha256": "7606c8e3d403542956ccdf84d49b2673dc9d4b10c3520faf9e8bf0ecc7b39f8a"
+    },
+    {
+      "ref": "refinement-test-009",
+      "sha256": "2faad06a2f45f81ac08dd8e2b9ff0dbad21d4084b7b467557ca83712e44c1332"
+    },
+    {
+      "ref": "refinement-test-010",
+      "sha256": "e45dcf0c2467737c90081e4a3d1c1a4d79884c68d24f3aeacaf4da9f01aaaae1"
+    },
+    {
+      "ref": "refinement-test-011",
+      "sha256": "643dd61bee13caef16c268a00be68a0161f82c2da34c3d6293f19114b2068902"
+    },
+    {
+      "ref": "refinement-test-012",
+      "sha256": "6eedf0d99f3842d3160206eff1d25fee98cf04d263462986bfafb40eb76e6b38"
+    },
+    {
+      "ref": "refinement-test-014",
+      "sha256": "ba4444fceb08edb539ee393ef8e37c55008ba69f9859cfd04e429318393ff84b"
+    },
+    {
+      "ref": "refinement-test-015",
+      "sha256": "ec0f6628243bc9a68f00c884ac0ffbac6be548921d12bacc2492e567419a0dc5"
+    },
+    {
+      "ref": "refinement-test-017",
+      "sha256": "77693a84b38a5f51f43acd8191da5f4026f07a1d601451289481fc955dd8e395"
+    },
+    {
+      "ref": "refinement-test-018",
+      "sha256": "a22f105238fc94d527b4e6540660bbcd67f646e8aaf5a405607ca10ebccf7cbd"
+    },
+    {
+      "ref": "refinement-test-020",
+      "sha256": "564188e9fc688bfeccecd5ad7d5534a76abb8cd96541bbf93ceca8a94342b003"
+    },
+    {
+      "ref": "refinement-test-021",
+      "sha256": "b1ad68c9b430e9fed356c60f96555ea2617721e4138ad9a1988dd6d9ee3c3e0f"
+    },
+    {
+      "ref": "refinement-test-022",
+      "sha256": "b2b8759283a3ddb2786761084442ecc88b54b31dd8dbfa8b9f18b511893132e3"
+    },
+    {
+      "ref": "refinement-test-023",
+      "sha256": "c4f84c58dbb172f2945ca810e071727ac33c5b8767a0bdd03ee74d6129cd60fa"
+    },
+    {
+      "ref": "refinement-test-024",
+      "sha256": "02b30063c97c6b862ae1a764c2c4132ccb3ec5acdab97ffb2915fa189de798a6"
+    },
+    {
+      "ref": "refinement-test-026",
+      "sha256": "36d7b37029630487f3f79e71f481ddb205295bbe69bca4993e332e873b2fa16f"
+    },
+    {
+      "ref": "refinement-test-027",
+      "sha256": "7a2ff58de57cf91b0fe8da67f74e7becabedeb42c285b098d3142309b3daae9b"
+    },
+    {
+      "ref": "refinement-test-028",
+      "sha256": "f9409c3545e4ac2bd8c4a47839eba608df9d80b9736ec5298f25dda3f812a090"
+    },
+    {
+      "ref": "refinement-test-029",
+      "sha256": "2f773bac499d88c574ed509f217f8621873304c903d48bb241784b422e899e6e"
+    },
+    {
+      "ref": "refinement-test-030",
+      "sha256": "daa4ccf9936747f6105f0e05563e6baa726c4fc7089696c34c45b324a736f98d"
+    },
+    {
+      "ref": "refinement-test-032",
+      "sha256": "5d74395d86e47bfe8597fe6b5de7715911aed8fd97ed197167dfef6c449c9353"
+    },
+    {
+      "ref": "refinement-test-033",
+      "sha256": "0deba4a255e86ea60942e583c94c8385adce31ac93fc688029f7c34022ed4d87"
+    },
+    {
+      "ref": "refinement-test-034",
+      "sha256": "c431200c9fc5ad57c1b25bc380e598e503ba417847071365e90fe31649e991c4"
+    },
+    {
+      "ref": "refinement-test-036",
+      "sha256": "583f3b5588f9467a83de4fb71d51f9ff3dc9b2c1c418dd02d20ac67dd7e837a7"
+    },
+    {
+      "ref": "refinement-test-037",
+      "sha256": "0c550d72d3c6e189ffb5f5659b185e8655e9fa9dcc702f62f51490b45c9c500e"
+    },
+    {
+      "ref": "refinement-test-038",
+      "sha256": "4234ecc8ed8210108940c1df69d93386a5a45f0e408710b20e5fbb28eebec86e"
+    },
+    {
+      "ref": "refinement-test-040",
+      "sha256": "8057248d70db07b865ed358374cda0de65da7653b8a502e9b354a45a60db3bf3"
+    },
+    {
+      "ref": "refinement-test-041",
+      "sha256": "c288af5116cc6584e25dfc2adc6a8f16d595d7a3c082ec04b7008f581317b13e"
+    },
+    {
+      "ref": "refinement-test-042",
+      "sha256": "7015cc9fc83777398e32fd0b55432fd220e56298eb8bc294aa1e4ea902f0362c"
+    },
+    {
+      "ref": "refinement-test-043",
+      "sha256": "ee64b4bcc7cc72cd8f8f1684babef90bfc87a22910ca7746644d477b9fca5fb6"
+    },
+    {
+      "ref": "refinement-test-044",
+      "sha256": "598ddf15305e6bb6b773363cfe7863d7c8603c5364582e1e77089481a30d494f"
+    },
+    {
+      "ref": "refinement-test-046",
+      "sha256": "10de57b3036d0379d4e05900fde565ad7d6152bc2d9065fa04d356348f177e5a"
+    },
+    {
+      "ref": "refinement-test-048",
+      "sha256": "9691c7f032ab1181b4efdf5392bddf8e8a085f55173a0dc35d439d81730a787f"
+    },
+    {
+      "ref": "refinement-test-049",
+      "sha256": "7ca040078fc9b5ebbc1e081b56c9cc73acbd51e5a08f80a0ed2c32cf669d01c0"
+    },
+    {
+      "ref": "refinement-test-050",
+      "sha256": "1f5bffc555a046db1cb253605731f668f3b75f9a69cd7403d9f6a90810a78031"
+    },
+    {
+      "ref": "refinement-test-052",
+      "sha256": "1dd5656cefbbcbb6db4ddd3d4a1235b70ab570872eed6d46efa6115a232d8ebf"
+    },
+    {
+      "ref": "refinement-test-054",
+      "sha256": "9f067bc7fc560cc79a4f988d91e407e1cd1bb731f3856bd89f2b0d6ce1aa9017"
+    },
+    {
+      "ref": "refinement-test-056",
+      "sha256": "52cae56c8e772018b15181442ada1ac55aa64c181ab4f55a406c6cb343d53852"
+    },
+    {
+      "ref": "refinement-test-057",
+      "sha256": "690d06b0d286f72f542a238b83ac85d7f9c0310e94f160070fce2b70ecbe8c83"
+    },
+    {
+      "ref": "refinement-test-058",
+      "sha256": "16df9e9ab18ca77a352b3f8d98f05699685504674c41b3b15533df1c37a7a1c2"
+    },
+    {
+      "ref": "refinement-test-059",
+      "sha256": "2b8728b4939bfbd823904232841a06605b35b87dea3fef101b9a83e394c84dbc"
+    },
+    {
+      "ref": "refinement-test-060",
+      "sha256": "5115b65e62766e1acbd825e2f079939bef07b6017db4e66eebc0147e10e29a3a"
+    },
+    {
+      "ref": "refinement-test-062",
+      "sha256": "b38f829da95efbc691a7c7abb55343da1bd13b524c35f8ebac498985974d4cb6"
+    },
+    {
+      "ref": "refinement-test-063",
+      "sha256": "cdea5fbe8d877ef08e40859f74a95f6963ce2834e4552d70d328c1739e591a28"
+    },
+    {
+      "ref": "refinement-test-066",
+      "sha256": "ff89435b9bb91307efea1a8f40c5c623aec0e27ab7d6d5ab1be4711fef13187c"
+    },
+    {
+      "ref": "refinement-test-068",
+      "sha256": "aa79320d297570054d5573446d623508b6a3ee8bbe25e4556b6115f916c6474f"
+    },
+    {
+      "ref": "refinement-test-069",
+      "sha256": "04c3d2e8e6717d9cf40a5fd73844d0aec30083ed33440c34a901479338e52ffe"
+    },
+    {
+      "ref": "refinement-test-070",
+      "sha256": "453836c7026c53f0da3a4d7c5a8eacf2cb48993654d468b0e3067f5dfec69f12"
+    },
+    {
+      "ref": "refinement-test-071",
+      "sha256": "dff4f29512134b099cde07b9572f82b57080de88823aef58d1661f77383aff86"
+    },
+    {
+      "ref": "refinement-test-072",
+      "sha256": "4c54358ee2d4800a692a476a64383a13bcc6eed59398d02df2d82467fc11c131"
+    },
+    {
+      "ref": "refinement-test-073",
+      "sha256": "fd63022561a517e84541ab50d0c9c97aa9ff221f2d9d1f376578ac5fe7e9680b"
+    },
+    {
+      "ref": "refinement-test-074",
+      "sha256": "3c41848da3d404d79e757a329efef34cdcecf1d9327c093533d2032451e45c41"
+    },
+    {
+      "ref": "refinement-test-075",
+      "sha256": "5b12c27b1d69bb12e9b92525d61d99ee7dc97501e5b46719c87bae7dc8852113"
+    },
+    {
+      "ref": "refinement-test-076",
+      "sha256": "b56ffcff0c30f9ee3158fd923d2ff5519a079a4b873a6585256605eb740ab003"
+    },
+    {
+      "ref": "refinement-test-078",
+      "sha256": "43206731118e6b374bb35e2258fd3352d147f6aec3daec1a95d58c997bf776b1"
+    }
+  ],
+  "packets": [
+    {
+      "ref": "refinement-test-001",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-002",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-004",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-006",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-009",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-010",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-011",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-012",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-014",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-015",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-017",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-018",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-020",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-021",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-022",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-023",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-024",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-026",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-027",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-028",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-029",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-030",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-032",
+      "stage": "test",
+      "outputs": 6,
+      "status": "withheld"
+    },
+    {
+      "ref": "refinement-test-033",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-034",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-036",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-037",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-038",
+      "stage": "test",
+      "outputs": 6,
+      "status": "withheld"
+    },
+    {
+      "ref": "refinement-test-040",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-041",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-042",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-043",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-044",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-046",
+      "stage": "test",
+      "outputs": 6,
+      "status": "withheld"
+    },
+    {
+      "ref": "refinement-test-048",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-049",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-050",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-052",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-054",
+      "stage": "test",
+      "outputs": 6,
+      "status": "withheld"
+    },
+    {
+      "ref": "refinement-test-056",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-057",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-058",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-059",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-060",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-062",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-063",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-066",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-068",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-069",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-070",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-071",
+      "stage": "test",
+      "outputs": 6,
+      "status": "withheld"
+    },
+    {
+      "ref": "refinement-test-072",
+      "stage": "test",
+      "outputs": 6,
+      "status": "withheld"
+    },
+    {
+      "ref": "refinement-test-073",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-074",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-075",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-076",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "refinement-test-078",
+      "stage": "test",
+      "outputs": 6,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-073",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-049",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-058",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-050",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-010",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-074",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-032",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-055",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-071",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-005",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-062",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-044",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-014",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-076",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-046",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-022",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-077",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-045",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "withheld"
+    },
+    {
+      "ref": "discovery-test-053",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    },
+    {
+      "ref": "discovery-test-012",
+      "stage": "validation",
+      "outputs": 12,
+      "status": "released"
+    }
+  ],
+  "guides": [
+    {
+      "id": "baseline-gpt",
+      "sha256": "b9aebd2bc984c3515508ef70c69b765220e1b502a5dc329d2925915c24f04a6c"
+    },
+    {
+      "id": "baseline-sonnet",
+      "sha256": "b9aebd2bc984c3515508ef70c69b765220e1b502a5dc329d2925915c24f04a6c"
+    },
+    {
+      "id": "draft-00-gpt",
+      "sha256": "af4d4eabb6390e8cec992c4267efff1258bddbd0393a409422f3e6d7f4c7d20f"
+    },
+    {
+      "id": "draft-00-sonnet",
+      "sha256": "af4d4eabb6390e8cec992c4267efff1258bddbd0393a409422f3e6d7f4c7d20f"
+    },
+    {
+      "id": "draft-00",
+      "sha256": "af4d4eabb6390e8cec992c4267efff1258bddbd0393a409422f3e6d7f4c7d20f"
+    },
+    {
+      "id": "extended-01-gpt",
+      "sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87"
+    },
+    {
+      "id": "extended-01-sonnet",
+      "sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87"
+    },
+    {
+      "id": "extended-01",
+      "sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87"
+    },
+    {
+      "id": "extended-02-gpt",
+      "sha256": "f8e7520a3eaf121b12bbfb75e98972d5c69b0cdbebc1503ff894009f9ac42357"
+    },
+    {
+      "id": "extended-02-sonnet",
+      "sha256": "f8e7520a3eaf121b12bbfb75e98972d5c69b0cdbebc1503ff894009f9ac42357"
+    },
+    {
+      "id": "extended-02",
+      "sha256": "f8e7520a3eaf121b12bbfb75e98972d5c69b0cdbebc1503ff894009f9ac42357"
+    },
+    {
+      "id": "extended-03-gpt",
+      "sha256": "8209235a14da7bec95f1e1b49aec629d0db7a1ce7194678c269e739c83bf9adc"
+    },
+    {
+      "id": "extended-03-sonnet",
+      "sha256": "8209235a14da7bec95f1e1b49aec629d0db7a1ce7194678c269e739c83bf9adc"
+    },
+    {
+      "id": "extended-03",
+      "sha256": "8209235a14da7bec95f1e1b49aec629d0db7a1ce7194678c269e739c83bf9adc"
+    },
+    {
+      "id": "skill-gpt",
+      "sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87"
+    },
+    {
+      "id": "skill-sonnet",
+      "sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87"
+    },
+    {
+      "id": "starting-gpt",
+      "sha256": "4cf1ee7fa91bac619edca7e56a3fa6d5e88f91f4e6bebb866ba0dd5ab80f9caf"
+    },
+    {
+      "id": "starting-sonnet",
+      "sha256": "4cf1ee7fa91bac619edca7e56a3fa6d5e88f91f4e6bebb866ba0dd5ab80f9caf"
+    },
+    {
+      "id": "starting",
+      "sha256": "4cf1ee7fa91bac619edca7e56a3fa6d5e88f91f4e6bebb866ba0dd5ab80f9caf"
+    }
+  ],
+  "packet_status": {
+    "test": {
+      "released": 51,
+      "withheld": 6
+    },
+    "validation": {
+      "released": 19,
+      "withheld": 1
+    }
+  },
+  "skill_file_sha256": "a6a8f91f22fa89c77eb6a4926279d9e336b7b46276cd6bfc2d0c8f4623dde398",
+  "release_code_sha256": "25c757a1677603632cbf2252ecb8ab937d38ccd26bd1d2b655c3501af2b3e0b4",
+  "analysis_sha256": "c68865afad958393ab66fdd562a19a23a159bdf830511f48f1965bebed946500",
+  "numeric_bundle_sha256": "c1b35a331bab0576682865d54c0178ca52173567fe4d950ed8feca269fca6b00",
+  "comparison_bundle_sha256": "29cb12edebd3ab0f924a3eae6c259d851e952f9c1cd356a8e669744cf2a8f2b0",
+  "training_comparison_sha256": "a94d523598cb1ba828377568f1d40efdd21b47ae850262f0ac0d467690f29c47",
+  "scope": "All measured scores are rebuilt. All numeric outcomes remain. Only source-checked text is released."
+}
