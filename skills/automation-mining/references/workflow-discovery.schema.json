@@ -1,0 +1,117 @@
+{
+  "type": "object",
+  "properties": {
+    "proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "job_observed": {
+            "type": "string"
+          },
+          "fix": {
+            "type": "string"
+          },
+          "trigger_type": {
+            "type": "string"
+          },
+          "trigger_description": {
+            "type": "string"
+          },
+          "unit_of_work": {
+            "type": "string"
+          },
+          "business_outcome": {
+            "type": "string"
+          },
+          "source_system": {
+            "type": "string"
+          },
+          "destination_system": {
+            "type": "string"
+          },
+          "remaining_human_work": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "build"
+            ]
+          },
+          "claimed_occurrences": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "material_unknowns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "work_instances": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "unit_id": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "unit_id",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "headline",
+          "job_observed",
+          "fix",
+          "trigger_type",
+          "trigger_description",
+          "unit_of_work",
+          "business_outcome",
+          "source_system",
+          "destination_system",
+          "remaining_human_work",
+          "kind",
+          "claimed_occurrences",
+          "evidence",
+          "material_unknowns",
+          "work_instances"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 5
+    }
+  },
+  "required": [
+    "proposals"
+  ],
+  "additionalProperties": false
+}

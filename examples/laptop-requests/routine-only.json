@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "brief": "Find automation opportunities in these synthetic activity records. The owner is unavailable. Use only these records; do not connect to other services.",
+  "records": [
+    {
+      "id": "notion-policy",
+      "source": "Notion",
+      "date": "2026-08-01",
+      "actor_type": "human",
+      "text": "Equipment policy: a manager must approve each purchase. Approval is a human decision."
+    },
+    {
+      "id": "salesforce-sync",
+      "source": "Salesforce",
+      "date": "2026-08-02",
+      "actor_type": "service",
+      "text": "The existing integration updated account A-100 from the billing service. Sync succeeded. No manual action was required."
+    },
+    {
+      "id": "slack-lunch",
+      "source": "Slack",
+      "date": "2026-08-03",
+      "actor_type": "human",
+      "text": "The team lunch is at noon. This is an announcement; no action is requested."
+    },
+    {
+      "id": "linear-bot",
+      "source": "Linear",
+      "date": "2026-08-03",
+      "actor_type": "service",
+      "text": "The existing bot closed scheduled maintenance ticket MAINT-1 after its checks passed. No manual action was required."
+    }
+  ]
+}

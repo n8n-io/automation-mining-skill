@@ -1,0 +1,114 @@
+{
+  "synthetic": true,
+  "brief": "Find automation opportunities in these synthetic activity records. The owner is unavailable. Use only these records; do not connect to other services.",
+  "records": [
+    {
+      "id": "slack-request-1",
+      "source": "Slack",
+      "date": "2026-08-01",
+      "actor_type": "human",
+      "work_unit_id": "LAP-001",
+      "text": "Alex: Laptop request LAP-001. Please order a 13-inch laptop. Team: Support. Cost center: SUP-10."
+    },
+    {
+      "id": "slack-copy-1",
+      "source": "Slack",
+      "date": "2026-08-01",
+      "actor_type": "human",
+      "work_unit_id": "LAP-001",
+      "text": "Operations coordinator: I copied request LAP-001 from this thread into Linear. I entered the requester, laptop model, team, and cost center by hand. The new ticket is OPS-1. It is waiting for the manager to approve the purchase."
+    },
+    {
+      "id": "linear-ticket-1",
+      "source": "Linear",
+      "date": "2026-08-01",
+      "actor_type": "human",
+      "work_unit_id": "LAP-001",
+      "text": "OPS-1, created by the operations coordinator. Request: LAP-001. Requester: Alex. Model: 13-inch laptop. Team: Support. Cost center: SUP-10. Status: Waiting for manager approval."
+    },
+    {
+      "id": "slack-request-2",
+      "source": "Slack",
+      "date": "2026-08-02",
+      "actor_type": "human",
+      "work_unit_id": "LAP-002",
+      "text": "Blair: Laptop request LAP-002. Please order a 15-inch laptop. Team: Support. Cost center: SUP-10."
+    },
+    {
+      "id": "slack-copy-2",
+      "source": "Slack",
+      "date": "2026-08-02",
+      "actor_type": "human",
+      "work_unit_id": "LAP-002",
+      "text": "Operations coordinator: I copied request LAP-002 from this thread into Linear. I entered the requester, laptop model, team, and cost center by hand. The new ticket is OPS-2. It is waiting for the manager to approve the purchase."
+    },
+    {
+      "id": "linear-ticket-2",
+      "source": "Linear",
+      "date": "2026-08-02",
+      "actor_type": "human",
+      "work_unit_id": "LAP-002",
+      "text": "OPS-2, created by the operations coordinator. Request: LAP-002. Requester: Blair. Model: 15-inch laptop. Team: Support. Cost center: SUP-10. Status: Waiting for manager approval."
+    },
+    {
+      "id": "slack-request-3",
+      "source": "Slack",
+      "date": "2026-08-03",
+      "actor_type": "human",
+      "work_unit_id": "LAP-003",
+      "text": "Casey: Laptop request LAP-003. Please order a 13-inch laptop. Team: Support. Cost center: SUP-10."
+    },
+    {
+      "id": "slack-copy-3",
+      "source": "Slack",
+      "date": "2026-08-03",
+      "actor_type": "human",
+      "work_unit_id": "LAP-003",
+      "text": "Operations coordinator: I copied request LAP-003 from this thread into Linear. I entered the requester, laptop model, team, and cost center by hand. The new ticket is OPS-3. It is waiting for the manager to approve the purchase."
+    },
+    {
+      "id": "linear-ticket-3",
+      "source": "Linear",
+      "date": "2026-08-03",
+      "actor_type": "human",
+      "work_unit_id": "LAP-003",
+      "text": "OPS-3, created by the operations coordinator. Request: LAP-003. Requester: Casey. Model: 13-inch laptop. Team: Support. Cost center: SUP-10. Status: Waiting for manager approval."
+    },
+    {
+      "id": "slack-followup-1",
+      "source": "Slack",
+      "date": "2026-08-04",
+      "actor_type": "human",
+      "work_unit_id": "LAP-001",
+      "text": "Operations coordinator: OPS-1 is the existing ticket for LAP-001. Please use that ticket. I did not create another record."
+    },
+    {
+      "id": "notion-policy",
+      "source": "Notion",
+      "date": "2026-08-01",
+      "actor_type": "human",
+      "text": "Equipment policy: a manager must approve each purchase. Approval is a human decision."
+    },
+    {
+      "id": "salesforce-sync",
+      "source": "Salesforce",
+      "date": "2026-08-02",
+      "actor_type": "service",
+      "text": "The existing integration updated account A-100 from the billing service. Sync succeeded. No manual action was required."
+    },
+    {
+      "id": "slack-lunch",
+      "source": "Slack",
+      "date": "2026-08-03",
+      "actor_type": "human",
+      "text": "The team lunch is at noon. This is an announcement; no action is requested."
+    },
+    {
+      "id": "linear-bot",
+      "source": "Linear",
+      "date": "2026-08-03",
+      "actor_type": "service",
+      "text": "The existing bot closed scheduled maintenance ticket MAINT-1 after its checks passed. No manual action was required."
+    }
+  ]
+}
