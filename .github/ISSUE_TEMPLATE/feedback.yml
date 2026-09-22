@@ -1,0 +1,46 @@
+name: Skill feedback
+description: Report an installation problem or a mining result that needs improvement.
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include private activity, credentials, customer information, or session exports.
+        Use synthetic or redacted examples. Describe what happened without copying source messages.
+  - type: input
+    id: environment
+    attributes:
+      label: Agent and versions
+      placeholder: "Claude Code 2.x; automation-mining 1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation route
+      options:
+        - Skills CLI
+        - Claude Code plugin
+        - Codex plugin
+        - Pi package
+        - ZIP or manual copy
+        - Local checkout
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: State the task and the result you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Describe the problem and its effect. For a mining result, state the claimed count and what the synthetic records support.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include a synthetic example when possible. Do not attach private records.

@@ -1,0 +1,16 @@
+{
+  "name": "n8n-automation-mining",
+  "owner": {
+    "name": "n8n"
+  },
+  "plugins": [
+    {
+      "name": "automation-mining",
+      "source": "./",
+      "description": "Find repeated manual work in activity records. Get automation proposals with evidence and work counts for your review."
+    }
+  ],
+  "metadata": {
+    "description": "Automation mining from n8n labs. Find manual work, check its evidence, and choose what to automate."
+  }
+}
