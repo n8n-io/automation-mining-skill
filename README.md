@@ -3,168 +3,150 @@
 </p>
 
 <p align="center">
-  <a href="#quick-start"><strong>Install the skill</strong></a> ·
+  <a href="#quick-start"><strong>Get started</strong></a> ·
   <a href="examples/laptop-requests/README.md">Try the example</a> ·
-  <a href="paper/taxonomy_skill.pdf">Read the paper</a> ·
-  <a href="docs/installation.md">Installation guide</a>
+  <a href="docs/installation.md">Installation guide</a> ·
+  <a href="paper/taxonomy_skill.pdf">Read the paper</a>
 </p>
 
 # Automation mining
 
-**Find repeated manual work. Get proposals you can check. Choose what to build.**
+**Find repeated manual work. Decide what to automate.**
 
-Give your agent a set of activity records or access to one work source. The
-skill looks for manual work: requests copied into a tracker, questions answered
-each week, or reports assembled from several tools.
+The request copied from chat into a tracker. The same lookup typed into another
+reply. The report assembled from several tools each week. Automation mining
+helps your agent find these tasks in activity records and propose a change you
+can review.
 
-You get **up to five proposals**, each with the source records, a count of work
-instances, and a clear description of what an automation could do. You choose
-what to build.
+You get **up to five proposals**, each with source references, a count of distinct
+work instances, the proposed automation, and the work that still needs a person.
+You choose which proposals deserve a build.
 
-An **n8n labs** experiment for Claude Code, Codex, Cursor, Pi, and other agents
-that support [Agent Skills](https://agentskills.io/home). Available under the
-[MIT License](LICENSE).
+An **n8n labs** experiment for agents that support [Agent Skills](https://agentskills.io/home).
+Available under the [MIT License](LICENSE). The package contains instructions
+and reference files; your agent supplies the model and tool connections.
 
 ## Quick start
 
-**Release status:** the first release is in preparation. After these changes
-reach `main`, use the Git installation below. Release ZIP files and the Codex
-marketplace package require the first version tag. Repository access is required
-while this repository is private.
+**Try it without connecting work data.** Give your agent the
+[skill](skills/automation-mining/SKILL.md) and the
+[synthetic activity file](examples/laptop-requests/activity.json), then ask:
 
-Install with [Skills CLI](https://www.skills.sh/docs):
+> Use automation-mining on the supplied activity.json. These records are
+> synthetic. The owner is unavailable. Read only the supplied records and
+> write the report as JSON to report.json.
+
+The records support three laptop requests and one proposal. Follow the
+[example guide](examples/laptop-requests/README.md) to check the result and try
+records that support no proposal. This checks basic behavior, not performance
+on your work.
+
+**Install for your own work** with [Skills CLI](https://www.skills.sh/docs/cli):
 
 ```sh
 npx skills@latest add n8n-io/automation-mining-skill --skill automation-mining
 ```
 
-Choose your agent and installation scope. The installer needs Node.js and Git.
-Start a new agent session, then ask:
+You need Node.js, Git, and a supported agent. Choose your agent and installation
+scope, then start a new session. For Claude Code, Codex, Pi, local installation,
+and release ZIP files, see the [installation guide](docs/installation.md).
 
-> Use automation-mining to find repeated manual work in my agent sessions from
-> the last two weeks.
+**Release status:** version 1.0.0 is in preparation. The Git command requires the
+skill to be merged into `main`. The Codex marketplace package and release ZIP
+files require the first version tag. GitHub access is required while the
+repository is private. You can try the files in this checkout now.
 
-This needs no external connection if your agent can read those session files.
-With a Slack connection, try:
+## Start with one place you work
 
-> Use automation-mining on #ops-requests for the last 30 days. I handle operations
-> for the team.
+Use this when you own a process and want to identify manual work before choosing
+an automation. Start with a clear source and time window:
 
-**No activity to connect yet?** Use the [small synthetic example](examples/laptop-requests/README.md).
-It includes the input records and a report for comparison.
-
-<details>
-<summary><strong>Claude Code, Codex, and Pi packages</strong></summary>
-
-Choose one installation route per agent.
-
-**Claude Code** — run these commands inside Claude Code:
-
-```text
-/plugin marketplace add n8n-io/automation-mining-skill
-/plugin install automation-mining@n8n-automation-mining
-```
-
-Start a new session, then use `/automation-mining:automation-mining`.
-
-**Codex** — after `v1.0.0` is published, run these commands in your terminal:
-
-```sh
-codex plugin marketplace add n8n-io/automation-mining-skill
-codex plugin add automation-mining@n8n-automation-mining
-```
-
-Start a new session, then select **Automation mining** in the skill picker.
-Use Skills CLI if your client does not support plugins.
-
-**Pi** — run this command in your terminal:
-
-```sh
-pi install git:github.com/n8n-io/automation-mining-skill
-```
-
-Start a new session, then use `/skill:automation-mining`.
-
-For ZIP downloads, updates, removal, and migration, see the
-[installation guide](docs/installation.md).
-
-</details>
-
-## What it can find
-
-| The work you keep doing | The change to investigate |
+| Your starting point | What to ask |
 | --- | --- |
-| Copy a request from chat into a tracker | Create the record and route it for approval |
-| Answer the same question with the same links | Put the answer and its source with the request |
-| Check a lead in several tools, then update the CRM | Collect the fields and update the record |
-| Assemble a weekly report from several sources | Prepare a report for a person to review |
-| Notice a failed job and tell its owner | Detect the failure and notify the owner |
-| Ask your agent for the same meeting brief | Prepare it from the calendar and source records |
+| Agent session files your agent can read | "Find repeated manual work in these sessions from the last two weeks." |
+| A team channel you belong to | "Use automation-mining on #ops-requests for the last 30 days. I handle operations for the team." |
+| Supplied work records | "Use automation-mining on these request records. I want to see where we copy information by hand." |
 
-These are examples, not promises. The skill checks your records before it
-proposes a change. It also identifies work already automated and gaps that need
-a decision, an owner, or a document first.
+Connect sources through your agent, or provide files it can read. The skill
+does not install connectors. For real work, you review the first findings and
+choose which ones to investigate. If you already know what to build, give that
+specification directly to your builder.
 
-## From activity to a decision
+## A proposal you can check
 
-1. **Choose a starting point.** The agent states what it can read and asks about
-   your work. Start with one source and a clear time window.
-2. **Steer the findings.** Review short cards. Keep, drop, or deepen a candidate.
-   Approve a new source when the evidence points there.
-3. **Check the proposal.** See the work, its count, the proposed change, and what
-   still needs a person. Source links let you check the claims.
-4. **Give your verdict.** Build it. Real, but not worth it. You misread this.
+In the synthetic example, a person copies three laptop requests from Slack into
+Linear and posts the ticket links back. The proposal creates those tickets and
+returns their links. Approval and exceptions stay with a person.
 
-<img src="assets/example-report.svg" alt="Synthetic example: three laptop requests support one proposal to copy requests from Slack into Linear, with approval kept with a person." width="1280">
+<img src="assets/example-report.svg" alt="Synthetic proposal: three laptop requests support copying requests from Slack into Linear. A person keeps approval. Access and event support still need checks." width="1280">
+
+Each proposal makes five things explicit:
+
+- **The observed work:** the operation a person performed and its source records.
+- **The count:** distinct work instances, separate from messages or threads.
+- **The proposed change:** input, action, and output.
+- **The limits:** remaining human work, missing evidence, and unverified access.
+- **Your decision:** build it, real but not worth it, or the agent misread it.
+
+A report can be empty. Activity volume alone does not establish manual work,
+and work already done by a successful automation does not need another proposal.
+
+## From evidence to a build decision
+
+1. **Choose the scope.** State your role, source, and time window. The agent
+   checks what it can read.
+2. **Review early findings.** Keep, drop, or investigate a candidate. Approve
+   access to another source when the evidence points there.
+3. **Check the proposal.** Review the work count, source references, proposed
+   change, and remaining human decisions.
+4. **Choose the next step.** An accepted proposal becomes a starting
+   specification for an [n8n workflow](https://n8n.io/) or another build tool.
+   Building is a separate task.
 
 Run time and model cost depend on the agent, tools, and number of records.
-A report can be empty when the records do not support a useful proposal.
+A proposal is not proof of feasibility or time saved. Check access, event
+support, and exception handling before building.
 
-## The method, measured
+## What the study measured
 
-The skill includes the procedure tested in **[Improving Automation Discovery
-with a Workflow Taxonomy](paper/taxonomy_skill.pdf)**, by Albert Alises, n8n.
-The repository includes the latest reviewed paper, version 2, and its LaTeX source.
+The included procedure was tested on **57 synthetic companies** with two reader
+models. Feedback changed the instructions; model weights stayed fixed.
 
-The study used a taxonomy of **907,353 workflow rows** to define tasks and create
-synthetic activity. Feedback changed the skill instructions; model weights
-stayed fixed. A separate test used **57 synthetic companies** and two reader models.
-
-| Measure | Starting procedure | Included procedure | Change, with 95% interval |
+| Measure | Starting skill | Included procedure | Change, with 95% interval |
 | --- | ---: | ---: | ---: |
-| Useful proposal quality | 44.7% | **53.0%** | +8.3 points [0.3, 16.8] |
-| Verified task recall | 28.2% | **51.7%** | +23.5 points [13.0, 34.4] |
+| Useful proposal quality | 44.7% | 53.0% | +8.3 points [0.3, 16.8] |
+| Verified task recall | 28.2% | 51.7% | +23.5 points [13.0, 34.4] |
 
-These results apply to the procedure on synthetic exports. The study does not
-measure the full interactive flow, user demand, or time saved in use. A later
-revision failed the release rule, so the package keeps the confirmed procedure.
+These results compare the revised procedure with the starting skill on the same
+test companies. A separate short-prompt comparison did **not** establish a
+quality gain. A later instruction revision failed its release rule, so the
+package retains the confirmed procedure.
 
-[Paper PDF](paper/taxonomy_skill.pdf) · [Method and limitations](METHOD.md) ·
-[Study records](research/README.md) · [Citation](CITATION.cff)
+The study tests fixed synthetic exports. It does not measure the full
+interactive flow, user demand, or time saved in use. Real records use the owner
+review flow; explicitly synthetic records use the tested procedure.
+
+[LaTeX source](paper/taxonomy_skill.tex) · [Paper PDF](paper/taxonomy_skill.pdf) ·
+[Method and limits](METHOD.md) · [Study records](research/README.md) · [Citation](CITATION.cff)
 
 ## Your data and your control
 
-The skill tells the agent to read source activity without posting, editing, or
-reacting. Reports use pointers and counts, not copied message bodies, personal
-data, or credentials. Use your own work or a channel you belong to, and tell
-the channel.
+The skill instructs the agent to read source activity without posting, editing,
+or reacting. It requires reports to use source references and counts instead
+of copied message bodies, personal data, or credentials. Review the report
+before you share it.
 
-The package contains instructions. It does not add data connections or a
-background service. Your agent, tools, and model provider process data under
-your account settings. Tool permissions must enforce access limits.
+These are instructions, not an access-control system. Your agent, tools, and
+model provider process data under your account settings. Set read permissions
+in the connected tools. Use your own work or a channel you belong to, and tell
+the channel before mining its activity.
 
-Building an automation is a separate task after review. Changes to a source
-require your approval for that source.
+## Help improve the skill
 
-## Found it? Build it in n8n.
+An installation failure, a wrong count, or a proposal that leaves the manual
+work in place is useful feedback. [Open an issue](https://github.com/n8n-io/automation-mining-skill/issues/new?template=feedback.yml)
+with your agent version and a synthetic example. Do not share private activity
+or session exports.
 
-An accepted proposal states the trigger, operation, output, and checks that
-remain. Use it as the starting specification for an [n8n workflow](https://n8n.io/).
-
-Help improve the skill: [report a problem or share feedback](https://github.com/n8n-io/automation-mining-skill/issues/new?template=feedback.yml).
-Use synthetic examples and remove private data before sharing.
-
----
-
-[Install and update](docs/installation.md) · [Contribute](CONTRIBUTING.md) ·
-[Changelog](CHANGELOG.md) · [Security](SECURITY.md) · [MIT License](LICENSE)
+[Contribute](CONTRIBUTING.md) · [Security](SECURITY.md) ·
+[Build and release](docs/distribution.md) · [Changelog](CHANGELOG.md) · [MIT License](LICENSE)

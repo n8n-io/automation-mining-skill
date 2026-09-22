@@ -3,10 +3,33 @@
 Choose one installation route per agent. The package supplies instructions and
 reference files. Connect the tools you want to read through your agent.
 
-The first release is in preparation. After these changes reach `main`, use a
-Git installation or the source files. The Codex marketplace package and release
-ZIP files require the `v1.0.0` tag. They are not available until that release is
-published. A private repository requires GitHub access.
+## Choose a route
+
+| Route | Use it when | Availability |
+| --- | --- | --- |
+| [Local files](#local-files) | You want to try a checkout before installing | Available from this checkout |
+| [Skills CLI](#skills-cli) | You want the installer to configure your agent | After the skill reaches `main` |
+| [Claude Code plugin](#claude-code-plugin) | You use Claude Code marketplaces | After the package reaches `main` |
+| [Codex plugin](#codex-plugin) | You use a Codex client with plugin support | After `v1.0.0` is published |
+| [Pi package](#pi-package) | You use Pi packages | After the package reaches `main` |
+| [ZIP download](#zip-download) | You want a versioned manual installation | After `v1.0.0` is published |
+
+The first release is in preparation. GitHub access is required while the
+repository is private. The Codex marketplace source is pinned to a release tag;
+it cannot install that version before the tag exists.
+
+## Local files
+
+From a checkout, ask your agent to read `skills/automation-mining/SKILL.md`
+and follow its references. Then give it the records to examine. Start with the
+[synthetic example](../examples/laptop-requests/README.md) if you do not want to
+connect a work source.
+
+For a manual installation, copy the complete `skills/automation-mining/` folder
+into your agent's skills directory. Include the `references/` and `agents/`
+folders and `LICENSE`; copying only `SKILL.md` is not sufficient. Save any local
+edits before replacing an existing installation. The [ZIP section](#zip-download)
+lists common destination directories.
 
 ## Skills CLI
 
@@ -32,6 +55,9 @@ Start a new session, then use `/automation-mining:automation-mining`.
 See the [Claude Code plugin guide](https://code.claude.com/docs/en/discover-plugins).
 
 ## Codex plugin
+
+This route requires the `v1.0.0` release tag and a client with plugin support.
+Until then, use Skills CLI after merge or the local files.
 
 Run these commands in your terminal:
 
@@ -117,3 +143,25 @@ Version 1.0.0 stores the skill in `skills/automation-mining/`. If you cloned a
 development version directly into your agent's skills directory, save local
 edits and move that clone outside the directory. Then install with one route
 above. A `git pull` alone does not move the skill to the expected location.
+
+## Check the installation
+
+Start a new session and ask the agent to use `automation-mining`. Confirm that
+it can read the skill and its reference files. Run the synthetic example before
+connecting work data. Python is needed only for the example checker and package
+tests, not for the skill itself.
+
+## If installation fails
+
+| Symptom | What to check |
+| --- | --- |
+| Repository not found | Confirm that your Git client has access to this repository. |
+| Codex cannot find `v1.0.0` | The first release tag may not exist yet. Use local files. |
+| The agent cannot find the skill | Start a new session. Check the installation scope and client support. |
+| More than one copy appears | Keep one installation route. Remove the extra copy with its installer. |
+| A reference file is missing | Reinstall the complete skill folder, including `references/`. |
+| A source cannot be read | Configure that connection in your agent and confirm read access. The skill does not add connectors. |
+
+If the problem remains, [report it](https://github.com/n8n-io/automation-mining-skill/issues/new?template=feedback.yml)
+with the agent version and installation route. Do not include credentials,
+private records, or a session export.

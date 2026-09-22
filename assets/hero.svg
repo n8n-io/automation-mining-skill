@@ -24,7 +24,7 @@
       <text x="58" y="267" fill="#fff" font-size="59" font-weight="600" letter-spacing="-2">keep doing</text>
       <text x="58" y="337" fill="url(#accent)" font-size="67" font-weight="600" letter-spacing="-2">by hand.</text>
       <text x="61" y="390" fill="#c1b7cb" font-size="21">Give your agent a place to start.</text>
-      <text x="61" y="420" fill="#c1b7cb" font-size="21">Get back work worth automating.</text>
+      <text x="61" y="420" fill="#c1b7cb" font-size="21">Get proposals you can check.</text>
       <rect x="790" y="135" width="432" height="282" rx="16" fill="url(#card)" stroke="#62505c" stroke-opacity=".8"/>
       <path d="M790 181h432" stroke="#4b3c4c"/>
       <circle cx="812" cy="158" r="4" fill="#ed796e"/><circle cx="827" cy="158" r="4" fill="#f3be67"/><circle cx="842" cy="158" r="4" fill="#7fbaa0"/>

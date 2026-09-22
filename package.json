@@ -2,7 +2,7 @@
   "name": "@n8n/automation-mining-skill",
   "version": "1.0.0",
   "private": true,
-  "description": "Find repeated manual work in activity records and propose automations with source evidence.",
+  "description": "Find repeated manual work in activity records. Get automation proposals with evidence and work counts for your review.",
   "license": "MIT",
   "repository": {
     "type": "git",

@@ -42,13 +42,21 @@ the quality of a mining run. Use a separate evaluation for procedure changes.
 | --- | --- |
 | `automation-mining-vX.Y.Z.zip` | Skill, references, display metadata, and license |
 | `automation-mining-plugin-vX.Y.Z.zip` | Skill, plugin manifests, marketplace files, and display images |
-| `automation-mining-paper-vX.Y.Z.pdf` | Latest reviewed paper |
+| `automation-mining-paper-vX.Y.Z.pdf` | Current paper revision |
 | `SHA256SUMS` | SHA-256 checksums for all three downloads |
 | `RELEASE_NOTES.md` | Changelog entry with links fixed to the release tag |
 
 The paper and study records stay out of the installable archives. The repository
 contains those records. The plugin archive includes only the images needed for
 its display. The README graphics and social preview remain in `assets/`.
+
+## Package formats
+
+The Claude marketplace `owner` field is an object with a `name`, as specified
+in the [Claude marketplace schema](https://code.claude.com/docs/en/plugin-marketplaces#required-fields).
+The Codex compatibility manifest uses `skills: "./skills/"`, as specified in
+the [OpenAI package guide](https://developers.openai.com/plugins/build/plugins#plugin-creator-output).
+These fields have different schemas; do not copy one format into the other.
 
 ## Prepare a release
 
@@ -59,7 +67,13 @@ its display. The README graphics and social preview remain in `assets/`.
    version in `CITATION.cff`. Add the top-level `date-released` field for the
    first release; update it on later releases. Set its paper URL to the release tag.
 4. Run the checks above and review the packages.
-5. Merge the change, then tag the merged commit with `vX.Y.Z` and push that tag.
+5. Check the repository description, homepage, and social preview in GitHub
+   settings.
+6. Merge the release change, then tag the merged commit with `vX.Y.Z` and push
+   that tag.
+7. After publication, verify the download and installation links. Remove the
+   pending-release notes from the README and installation guide in a follow-up
+   documentation change.
 
 The release workflow requires the tag to point to a commit on `main`. It runs
 checks and tests on Linux and Windows, compares package checksums, and verifies
@@ -97,7 +111,7 @@ tectonic -X compile taxonomy_skill.tex
 ```
 
 Build in a temporary copy when you only want to check the source. A local
-compiler can change PDF metadata and file hashes. Do not replace the reviewed
+compiler can change PDF metadata and file hashes. Do not replace the versioned
 PDF during an unrelated package change.
 
 ## License

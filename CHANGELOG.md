@@ -9,10 +9,13 @@ Initial release candidate of automation mining from n8n labs.
 - Install through Skills CLI, Claude Code, Codex, Pi, or a versioned ZIP file.
 - Include the confirmed workflow discovery procedure and report schema without
   changes to their tested bytes.
-- Include the latest reviewed paper, version 2, with its source, aggregate study
-  records, and file hashes.
+- Include the paper, version 3, with its source, aggregate study
+  records, explicit comparison scopes, and file hashes. The paper revision
+  improves language and structure; numeric table entries are unchanged.
 - Provide a synthetic example with three laptop requests and a case that needs
   no proposal.
+- Keep source access within the approved scope, distinguish manual work from
+  automated events, and check the tested instruction text against its hashes.
 - Supply repeatable archive builds, download checksums, and release checks on
   Linux and Windows.
 

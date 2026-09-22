@@ -24,6 +24,7 @@ body:
         - Codex plugin
         - Pi package
         - ZIP or manual copy
+        - Local checkout
   - type: textarea
     id: expected
     attributes:
@@ -35,7 +36,7 @@ body:
     id: actual
     attributes:
       label: Actual result
-      description: Describe the problem, its effect, and any incorrect counts or citations.
+      description: Describe the problem and its effect. For a mining result, state the claimed count and what the synthetic records support.
     validations:
       required: true
   - type: textarea
