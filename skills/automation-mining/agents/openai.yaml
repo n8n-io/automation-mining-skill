@@ -1,0 +1,4 @@
+interface:
+  display_name: "Automation mining"
+  short_description: "Find manual work and check what to automate"
+  default_prompt: "Use $automation-mining to find automation opportunities in my work activity."

@@ -1,0 +1,25 @@
+.DS_Store
+metadata.yaml
+dist/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+.venv/
+*.log
+*.tmp
+*.swp
+mining-feedback-*.md
+automation-mining-20*.md
+report.json
+routine-report.json
+
+# Keep paper build output outside the source tree.
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+
+# Keep source exports outside this repository.
+*.csv

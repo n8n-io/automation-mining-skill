@@ -1,0 +1,10 @@
+{
+  "name": "Workflow Discovery Skill",
+  "source_guide_sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87",
+  "instructions_characters": 7684,
+  "protocol_sha256": "adbbc3e19066cdd98cb5ec8320d558daf0bc8b738495efef7e8bd353fcdafcb8",
+  "test_freeze_sha256": "2e5b776c212447fa4e86867b0735b46cf2eda2c759298800897ebab47f04620c",
+  "training_comparison_plan_sha256": "c314289bf2bb583ea7224c5a0d4a4465a773b3c3bb07509f2220f8b58f7047bd",
+  "skill_file_sha256": "a6a8f91f22fa89c77eb6a4926279d9e336b7b46276cd6bfc2d0c8f4623dde398",
+  "scope": "The Markdown body is the exact tested system text. Routing metadata is outside the experiment. The study tests fixed activity exports."
+}
