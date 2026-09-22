@@ -125,12 +125,15 @@ explicitly synthetic exports. Real exports and connected activity use the
 owner-review flow. This prevents the test procedure's fictional-data assumption
 from being applied to actual activity.
 
-The paper uses the reviewed version 2 text. Its PDF and LaTeX source retain
-those bytes. The manifest records the hashes of the 15 study, procedure, and
-paper files it lists. It does not cover the full repository. Private repository
-references are omitted. Metadata notes define instruction counts, comparisons,
-validation limits, and study versions. Study results and the tested procedure
-are unchanged.
+Paper version 3 is an editorial revision dated 22 September 2026. It revises
+language and structure, clarifies the two first-test comparisons, and states
+the validation-record limits. Numeric table entries, study results, and the
+tested procedure are unchanged.
+
+The manifest records the hashes of the 15 study, procedure, and paper files
+it lists. It does not cover the full repository. Private repository references
+are omitted. Metadata notes define instruction counts, comparisons, validation
+limits, and study versions.
 
 The private workflow export, complete synthetic datasets, model responses, and
 evaluation code are not distributed here. The bundled records document the

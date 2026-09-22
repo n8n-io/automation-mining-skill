@@ -2,14 +2,14 @@
   "scope": "Hashes cover only the 15 study, procedure, and paper files listed here. Private repository names, commit IDs, and source paths are omitted. Metadata notes define instruction counts, comparisons, validation limits, and study versions. Study results and the tested procedure are unchanged.",
   "files": {
     "paper/taxonomy_skill.pdf": {
-      "sha256": "4e52c69247e7d96d06ed90796ae1c3f3a23d4a15006285aa7d1c464648f2c756",
-      "bytes": 83886,
-      "changes": "Use the reviewed version 2 paper. Define study terms and explain the method with examples and diagrams. Keep the reported results and limitations."
+      "sha256": "815c636ac144b53805d7cd0fb8dc5ac4e40d00678dc75d951a5b1bee482a7ed7",
+      "bytes": 79665,
+      "changes": "Editorial revision 3. Revise language and structure; clarify comparison and validation scopes. Preserve all numeric table entries, study results, and references."
     },
     "paper/taxonomy_skill.tex": {
-      "sha256": "adcc368b9b8d1b2b7ec23c91a9bb15649a723d3721707e270a50c65f4e54ddbf",
-      "bytes": 55276,
-      "changes": "Use the reviewed version 2 paper. Define study terms and explain the method with examples and diagrams. Keep the reported results and limitations."
+      "sha256": "df81437b8969f65fc8f06234ab8c47f54579bfed87e1d820a574853c4e41f1f0",
+      "bytes": 51442,
+      "changes": "Editorial revision 3. Revise language and structure; clarify comparison and validation scopes. Preserve all numeric table entries, study results, and references."
     },
     "skills/automation-mining/references/workflow-discovery.artifact.json": {
       "sha256": "fde1ea3b1c74d032222c15bab40a19180c0aa1940a812b8593f9157b62bca9e8",
@@ -65,7 +65,8 @@
     }
   },
   "paper_revision": {
-    "version": 2,
-    "changes": "Use the reviewed version 2 paper. Tables, references, and diagrams are included in the LaTeX source."
+    "version": 3,
+    "date": "2026-09-22",
+    "changes": "Editorial revision. Numeric table entries, study results, and references are unchanged. The tested procedure is unchanged."
   }
 }

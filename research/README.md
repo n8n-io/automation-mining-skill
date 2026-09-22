@@ -25,8 +25,8 @@ checks; they are not enough to repeat the complete study independently.
 The manifest identifies the 15 study, procedure, and paper files it lists by
 size and SHA-256 hash. It does not cover the full repository.
 Private repository names, commit IDs, and source paths are omitted. Study notes were updated to remove private history references and to define
-the comparison, validation, and version scopes. Their hashes were updated. Study results and the tested procedure are unchanged. The paper uses
-the reviewed version 2 text. See [METHOD.md](../METHOD.md) for the design and limits.
+the comparison, validation, and version scopes. Their hashes were updated. Study results and the tested procedure are unchanged. Paper version 3 revises language and structure; its numeric table entries
+and study results are unchanged. See [METHOD.md](../METHOD.md) for the design and limits.
 
 ## Read the comparisons correctly
 

@@ -10,7 +10,7 @@ authors:
 preferred-citation:
   type: report
   title: Improving Automation Discovery with a Workflow Taxonomy
-  version: "2"
+  version: "3"
   authors:
     - family-names: Alises
       given-names: Albert
@@ -18,5 +18,5 @@ preferred-citation:
     name: n8n
   year: 2026
   month: 9
-  date-published: 2026-09-09
+  date-published: 2026-09-22
   url: https://github.com/n8n-io/automation-mining-skill/blob/main/paper/taxonomy_skill.pdf
