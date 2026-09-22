@@ -25,7 +25,9 @@ class PackageTests(unittest.TestCase):
             self.assertEqual(first, {p.name: p.read_bytes() for p in (root / 'dist').iterdir()})
             for suffix, expected in [(f'v{value}', package.SKILL_FILES), (f'plugin-v{value}', package.PLUGIN_FILES)]:
                 with zipfile.ZipFile(root / f'dist/automation-mining-{suffix}.zip') as archive:
-                    self.assertEqual(len(archive.namelist()), len(expected))
+                    destinations = [Path('automation-mining') / (p.relative_to(package.SKILL)
+                                    if suffix == f'v{value}' else p) for p in expected]
+                    self.assertEqual(archive.namelist(), sorted(p.as_posix() for p in destinations))
                     self.assertTrue(all(b'local data' != archive.read(name) for name in archive.namelist()))
             for line in (root / 'dist/SHA256SUMS').read_text().splitlines():
                 digest, name = line.split('  ')
@@ -82,3 +84,7 @@ class PackageTests(unittest.TestCase):
             self.assertIn(b'version: "1.0.0"', skill.read_bytes())
             self.assertNotIn(b'\r', skill.read_bytes())
             self.assertEqual((root / package.SKILL / 'LICENSE').read_bytes(), b'MIT License\n')
+
+
+if __name__ == '__main__':
+    unittest.main()

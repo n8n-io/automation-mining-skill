@@ -78,6 +78,18 @@ shasum -a 256 -c SHA256SUMS
 
 On Linux, use `sha256sum -c SHA256SUMS`.
 
+On Windows, run this in PowerShell from the download folder. It stops if a
+file is missing or its checksum does not match:
+
+```powershell
+Get-Content .\SHA256SUMS | ForEach-Object {
+    $expected, $name = $_ -split '  ', 2
+    $actual = (Get-FileHash -LiteralPath $name -Algorithm SHA256 -ErrorAction Stop).Hash
+    if ($actual -ne $expected) { throw "Checksum mismatch: $name" }
+    Write-Output "OK: $name"
+}
+```
+
 ## Update or remove
 
 Use the route you used to install:

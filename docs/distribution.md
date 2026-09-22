@@ -56,7 +56,8 @@ its display. The README graphics and social preview remain in `assets/`.
 2. Run `python3 scripts/package.py sync`. This updates the plugin versions, the
    Codex source tag, skill metadata, and copied license.
 3. Replace `Unreleased` in `CHANGELOG.md` with the release date. Update the
-   version and `date-released` in `CITATION.cff`. Set its paper URL to the release tag.
+   version in `CITATION.cff`. Add the top-level `date-released` field for the
+   first release; update it on later releases. Set its paper URL to the release tag.
 4. Run the checks above and review the packages.
 5. Merge the change, then tag the merged commit with `vX.Y.Z` and push that tag.
 
@@ -69,7 +70,11 @@ GitHub Actions use fixed commit hashes. Dependabot checks them each month.
 Pull requests, pushes to `main`, and releases run Gitleaks on all fetched Git
 history. The scanner version and download checksum are fixed in
 `.github/workflows/secrets.yml`. Matches fail the check; values are hidden in
-the log. To run the same scan locally after you install Gitleaks:
+the log. A finding in an older commit also blocks new changes. This is
+intentional: deleting a secret from the current tree does not remove it from
+Git history. Revoke exposed credentials and remove them from reachable history
+before release. Review false positives before adding any narrowly scoped scanner
+configuration. To run the same scan locally after you install Gitleaks:
 
 ```sh
 gitleaks git --log-opts=--all --redact --max-decode-depth=3 --max-archive-depth=3 --ignore-gitleaks-allow --no-banner
