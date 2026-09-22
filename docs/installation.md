@@ -8,15 +8,14 @@ reference files. Connect the tools you want to read through your agent.
 | Route | Use it when | Availability |
 | --- | --- | --- |
 | [Local files](#local-files) | You want to try a checkout before installing | Available from this checkout |
-| [Skills CLI](#skills-cli) | You want the installer to configure your agent | After the skill reaches `main` |
-| [Claude Code plugin](#claude-code-plugin) | You use Claude Code marketplaces | After the package reaches `main` |
-| [Codex plugin](#codex-plugin) | You use a Codex client with plugin support | After `v1.0.0` is published |
-| [Pi package](#pi-package) | You use Pi packages | After the package reaches `main` |
-| [ZIP download](#zip-download) | You want a versioned manual installation | After `v1.0.0` is published |
+| [Skills CLI](#skills-cli) | You want the installer to configure your agent | Available |
+| [Claude Code plugin](#claude-code-plugin) | You use Claude Code marketplaces | Available |
+| [Codex plugin](#codex-plugin) | You use a Codex client with plugin support | Available in v1.0.0 |
+| [Pi package](#pi-package) | You use Pi packages | Available |
+| [ZIP download](#zip-download) | You want a versioned manual installation | Available in v1.0.0 |
 
-The first release is in preparation. GitHub access is required while the
-repository is private. The Codex marketplace source is pinned to a release tag;
-it cannot install that version before the tag exists.
+GitHub access is required while the repository is private. The Codex
+marketplace source is pinned to the `v1.0.0` release tag.
 
 ## Local files
 
@@ -56,8 +55,7 @@ See the [Claude Code plugin guide](https://code.claude.com/docs/en/discover-plug
 
 ## Codex plugin
 
-This route requires the `v1.0.0` release tag and a client with plugin support.
-Until then, use Skills CLI after merge or the local files.
+This route requires a client with plugin support.
 
 Run these commands in your terminal:
 
@@ -82,7 +80,7 @@ See the [Pi package guide](https://github.com/earendil-works/pi/blob/main/packag
 
 ## ZIP download
 
-After the first release is published, open the [latest release](https://github.com/n8n-io/automation-mining-skill/releases/latest).
+Open the [latest release](https://github.com/n8n-io/automation-mining-skill/releases/latest).
 Download the skill ZIP and extract its `automation-mining/` folder into your
 agent's skills directory:
 
@@ -156,7 +154,7 @@ tests, not for the skill itself.
 | Symptom | What to check |
 | --- | --- |
 | Repository not found | Confirm that your Git client has access to this repository. |
-| Codex cannot find `v1.0.0` | The first release tag may not exist yet. Use local files. |
+| Codex cannot find `v1.0.0` | Check repository access and update the marketplace. Use local files if needed. |
 | The agent cannot find the skill | Start a new session. Check the installation scope and client support. |
 | More than one copy appears | Keep one installation route. Remove the extra copy with its installer. |
 | A reference file is missing | Reinstall the complete skill folder, including `references/`. |

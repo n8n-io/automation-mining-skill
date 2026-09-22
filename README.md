@@ -28,10 +28,6 @@ that support [Agent Skills](https://agentskills.io/home). Open source under the
 
 ## Quick start
 
-**Release status:** version 1.0.0 is in preparation. Git installation requires
-the skill on `main`; the Codex package and ZIP downloads require the first
-version tag. See the [installation guide](docs/installation.md) for local use.
-
 Install with [Skills CLI](https://www.skills.sh/docs):
 
 ```sh

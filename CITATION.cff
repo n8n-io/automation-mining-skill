@@ -3,6 +3,7 @@ message: "To cite the study, use the paper below."
 type: software
 title: Automation mining
 version: 1.0.0
+date-released: 2026-09-22
 url: https://github.com/n8n-io/automation-mining-skill
 license: MIT
 authors:
@@ -19,4 +20,4 @@ preferred-citation:
   year: 2026
   month: 9
   date-published: 2026-09-22
-  url: https://github.com/n8n-io/automation-mining-skill/blob/main/paper/taxonomy_skill.pdf
+  url: https://github.com/n8n-io/automation-mining-skill/blob/v1.0.0/paper/taxonomy_skill.pdf
