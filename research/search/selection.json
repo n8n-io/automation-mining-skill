@@ -35,5 +35,6 @@
       }
     }
   },
-  "selected_guide_sha256": "3842b01850ead0466c0d1453e9eac8db35222c98423a5e425e5073dcdb66156e"
+  "selected_guide_sha256": "3842b01850ead0466c0d1453e9eac8db35222c98423a5e425e5073dcdb66156e",
+  "scope": "Candidate selection on 60 new synthetic validation companies, separate from the final test. Each condition has 120 runs with two readers: Claude Sonnet 5 and GPT-5.6 Sol. These are selection results, not release results."
 }

@@ -1,5 +1,5 @@
 {
-  "scope": "Hashes identify the files included in this repository. Private repository names, commit IDs, and source paths are omitted. Two study notes were updated to remove references to private history. Study results and the tested procedure are unchanged.",
+  "scope": "Hashes cover only the 15 study, procedure, and paper files listed here. Private repository names, commit IDs, and source paths are omitted. Metadata notes define instruction counts, comparisons, validation limits, and study versions. Study results and the tested procedure are unchanged.",
   "files": {
     "paper/taxonomy_skill.pdf": {
       "sha256": "4e52c69247e7d96d06ed90796ae1c3f3a23d4a15006285aa7d1c464648f2c756",
@@ -12,8 +12,8 @@
       "changes": "Use the reviewed version 2 paper. Define study terms and explain the method with examples and diagrams. Keep the reported results and limitations."
     },
     "skills/automation-mining/references/workflow-discovery.artifact.json": {
-      "sha256": "7f92f41bcb71bd9bdc46b15d38825a92d6d80821e6eec0331114bfbd124c867c",
-      "bytes": 695
+      "sha256": "fde1ea3b1c74d032222c15bab40a19180c0aa1940a812b8593f9157b62bca9e8",
+      "bytes": 1048
     },
     "skills/automation-mining/references/workflow-discovery.md": {
       "sha256": "a6a8f91f22fa89c77eb6a4926279d9e336b7b46276cd6bfc2d0c8f4623dde398",
@@ -52,16 +52,16 @@
       "bytes": 28978
     },
     "research/search/selection.json": {
-      "sha256": "d1477073d184fe479d33132d7fd0657c87bb952ce2ac0d68234552312910ac33",
-      "bytes": 1001
+      "sha256": "c32543941faaed7b7f945f1d212e6ac6871bb67bfe8475e1d9ce2ef6d1e61159",
+      "bytes": 1236
     },
     "research/search/skill-release-check.json": {
       "sha256": "c9df5c8868582ee626ed967f417b9e1dc6d77fd75f8c4b02fed9bc04c7929094",
       "bytes": 5800
     },
     "research/search/skill-retention.json": {
-      "sha256": "98c72a46747bde8dd3baf3483d782fe52446c7b6342c8a754682e945a18d71b8",
-      "bytes": 696
+      "sha256": "358097b8919fd570bc16171a717e400ffd79f507c398694c593be64dff158b6e",
+      "bytes": 793
     }
   },
   "paper_revision": {

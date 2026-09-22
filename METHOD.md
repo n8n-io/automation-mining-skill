@@ -58,7 +58,14 @@ reader differences within each company and uses 10,000 company bootstrap samples
 | Useful proposal quality | 44.7% | 53.0% | +8.3 points [0.3, 16.8] |
 | Verified task recall | 28.2% | 51.7% | +23.5 points [13.0, 34.4] |
 
-Both measures pass the fixed improvement rule. The trained procedure returns
+These values compare the revised procedure with the starting skill on the
+same 57 test companies; see [the comparison record](research/confirmed/training-comparison.json).
+The [separate short-prompt comparison](research/confirmed/analysis.json) uses
+a different reference: 47.1% quality and 33.9% recall. Its quality difference
+is +5.8 points [-2.7, 14.8], so a quality gain over the short prompt is not
+established.
+
+Both measures against the starting skill pass the fixed improvement rule. The trained procedure returns
 nonempty reports in 77 of 78 runs on companies with a keyed task. Its pooled
 verified proposal precision is 72.0%.
 
@@ -118,10 +125,12 @@ explicitly synthetic exports. Real exports and connected activity use the
 owner-review flow. This prevents the test procedure's fictional-data assumption
 from being applied to actual activity.
 
-The paper uses the latest reviewed version 2 text. Its PDF and LaTeX source
-retain their reviewed bytes. The manifest records the hashes of the included files. Private repository
-references are omitted. Two study notes were updated to remove references to
-private history. Study results and the tested procedure are unchanged.
+The paper uses the reviewed version 2 text. Its PDF and LaTeX source retain
+those bytes. The manifest records the hashes of the 15 study, procedure, and
+paper files it lists. It does not cover the full repository. Private repository
+references are omitted. Metadata notes define instruction counts, comparisons,
+validation limits, and study versions. Study results and the tested procedure
+are unchanged.
 
 The private workflow export, complete synthetic datasets, model responses, and
 evaluation code are not distributed here. The bundled records document the
@@ -137,3 +146,7 @@ tectonic -X compile taxonomy_skill.tex
 The copied offline record reports 768 score replays, 176 dataset hash checks,
 three instruction body hash checks, and an identical final analysis. These are
 recorded study checks, not checks that the package build runs again.
+
+The first validation record lists development packets without their file
+hashes. Those packets and the 240 recorded development score replays cannot
+be checked from this repository. See the [validation limits](research/README.md#limits-of-the-validation-record).

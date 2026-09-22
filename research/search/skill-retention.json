@@ -6,5 +6,5 @@
   "schema_sha256": "8347afdcee2a25e76499053c410a449be9ebbebc75ad5c88c5b82b2ece13b436",
   "skill_release_check_sha256": "c9df5c8868582ee626ed967f417b9e1dc6d77fd75f8c4b02fed9bc04c7929094",
   "copied_artifacts_match": true,
-  "scope": "The new revision does not meet the recorded release rule. The existing skill and schema stay byte-identical to their confirmed test artifacts."
+  "scope": "The new revision does not meet the recorded release rule. The existing skill and schema stay byte-identical to their confirmed test artifacts. skill_version identifies the study version (0.5.0), not the installable package version (1.0.0)."
 }
