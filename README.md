@@ -85,7 +85,7 @@ pi install git:github.com/n8n-io/automation-mining-skill
 
 Start a new session, then use `/skill:automation-mining`.
 
-For ZIP downloads, updates, removal, and migration, see the
+For ZIP downloads, updates, and removal, see the
 [installation guide](docs/installation.md).
 
 </details>
