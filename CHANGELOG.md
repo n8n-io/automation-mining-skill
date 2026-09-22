@@ -1,24 +1,58 @@
 # Changelog
 
-## v1.0.0 — Unreleased
+## v1.0.0 — 2026-09-22
 
-Initial release candidate of automation mining from n8n labs.
+**Your next useful automation is already hiding in your work.**
 
-- Find manual work in activity records and return up to five proposals with
-  source evidence, work counts, and owner verdicts.
-- Install through Skills CLI, Claude Code, Codex, Pi, or a versioned ZIP file.
-- Include the confirmed workflow discovery procedure and report schema without
-  changes to their tested bytes.
-- Include the paper, version 3, with its source, aggregate study
-  records, explicit comparison scopes, and file hashes. The paper revision
-  improves language and structure; numeric table entries are unchanged.
-- Provide a synthetic example with three laptop requests and a case that needs
-  no proposal.
-- Keep source access within the approved scope, distinguish manual work from
-  automated events, and check the tested instruction text against its hashes.
-- Supply repeatable archive builds, download checksums, and release checks on
-  Linux and Windows.
+The request you copy into a tracker. The question you answer every week.
+The Friday report that starts with five open tabs. Start there.
 
-The study measured the procedure on synthetic exports. It did not measure the
-full interactive flow or time saved in use. See the [method](METHOD.md) for
-results and limits, and the [installation guide](docs/installation.md) to start.
+Automation mining from **n8n labs** helps your agent find repeated manual work
+and turn it into proposals you can check. Point it at one work source or a set
+of activity records. Choose what deserves a build.
+
+### Five proposals. Your call.
+
+Get up to five proposals, each with source records, a count of distinct work
+instances, the proposed change, and the decisions that still need a person.
+Keep a finding, drop it, or ask the agent to investigate further. A report can
+be empty when the records do not support a useful proposal.
+
+An accepted proposal gives you a starting specification for an
+[n8n workflow](https://n8n.io/). You decide what happens next.
+
+### Give it a first job
+
+```sh
+npx skills@latest add n8n-io/automation-mining-skill --skill automation-mining
+```
+
+Start a new agent session, then ask:
+
+> Use automation-mining to find repeated manual work in my agent sessions from
+> the last two weeks.
+
+Your agent needs access to those session files. Want to try it with supplied
+records? The [synthetic example](examples/laptop-requests/README.md) includes
+three laptop requests and a report for comparison.
+
+Use Skills CLI, the Claude Code or Codex plugin, the Pi package, or a ZIP
+download. Choose your route in the [installation guide](docs/installation.md).
+
+### Read the evidence
+
+This release includes the [paper](paper/taxonomy_skill.pdf), version 3, its
+LaTeX source, and aggregate study records. The procedure was tested on
+**57 synthetic companies** with two reader models. The study does not measure
+the full interactive flow or time saved in use. See the [method](METHOD.md)
+for the results and limits.
+
+The skill contains instructions, not a background service. Your agent supplies
+the connections. You choose the scope and review the findings before a build.
+
+Both installable archives include the MIT License. Linux and Windows builds
+produce the same package bytes, with SHA-256 checksums for each download.
+
+[Visit the website](https://automation-mining-skill.pages.dev/) ·
+[Try the example](examples/laptop-requests/README.md) ·
+[Share feedback](https://github.com/n8n-io/automation-mining-skill/issues/new?template=feedback.yml)
