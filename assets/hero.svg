@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600" role="img" aria-labelledby="title desc">
+  <title id="title">Find the work you keep doing by hand.</title>
+  <desc id="desc">Automation mining from n8n labs. Read your activity, check the evidence, and choose what to automate. The laptop request card is a synthetic example.</desc>
+  <defs>
+    <linearGradient id="accent" x2="1" y2="0"><stop stop-color="#ffbd69"/><stop offset="1" stop-color="#ff725e"/></linearGradient>
+    <radialGradient id="warm"><stop stop-color="#a43d27" stop-opacity=".7"/><stop offset="1" stop-color="#a43d27" stop-opacity="0"/></radialGradient>
+    <radialGradient id="purple"><stop stop-color="#58209a" stop-opacity=".36"/><stop offset="1" stop-color="#58209a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="card" x2="0" y2="1"><stop stop-color="#25202f"/><stop offset="1" stop-color="#17131f"/></linearGradient>
+    <clipPath id="frame"><rect width="1280" height="600" rx="20"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="600" fill="#0e0918"/>
+    <ellipse cx="1190" cy="65" rx="570" ry="470" fill="url(#warm)"/>
+    <ellipse cx="170" cy="590" rx="630" ry="390" fill="url(#purple)"/>
+    <path d="M744 0v600M0 466h1280" stroke="#ffffff" stroke-opacity=".07"/>
+    <g font-family="Arial, Helvetica, sans-serif">
+      <g transform="translate(58 48)">
+        <path d="M0 8h15v16h15M0 40h15V24" fill="none" stroke="#ff887b" stroke-width="3"/>
+        <circle cy="8" r="5" fill="#ffb552"/><circle cy="40" r="5" fill="#ff725e"/><circle cx="31" cy="24" r="7" fill="#eb4b72"/>
+        <text x="52" y="30" fill="#fff" font-size="23" font-weight="600">n8n <tspan fill="#b8aebf" font-weight="400">labs</tspan></text>
+      </g>
+      <text x="1208" y="79" text-anchor="end" fill="#cabac7" font-size="13" letter-spacing="2">AUTOMATION MINING</text>
+      <text x="58" y="197" fill="#fff" font-size="59" font-weight="600" letter-spacing="-2">Find the work you</text>
+      <text x="58" y="267" fill="#fff" font-size="59" font-weight="600" letter-spacing="-2">keep doing</text>
+      <text x="58" y="337" fill="url(#accent)" font-size="67" font-weight="600" letter-spacing="-2">by hand.</text>
+      <text x="61" y="390" fill="#c1b7cb" font-size="21">Give your agent a place to start.</text>
+      <text x="61" y="420" fill="#c1b7cb" font-size="21">Get back work worth automating.</text>
+      <rect x="790" y="135" width="432" height="282" rx="16" fill="url(#card)" stroke="#62505c" stroke-opacity=".8"/>
+      <path d="M790 181h432" stroke="#4b3c4c"/>
+      <circle cx="812" cy="158" r="4" fill="#ed796e"/><circle cx="827" cy="158" r="4" fill="#f3be67"/><circle cx="842" cy="158" r="4" fill="#7fbaa0"/>
+      <text x="1198" y="163" text-anchor="end" fill="#bdb0c7" font-family="monospace" font-size="12">synthetic example</text>
+      <text x="816" y="216" fill="#ffbd69" font-family="monospace" font-size="13">01 / SUPPORTED BY THE RECORDS</text>
+      <text x="816" y="252" fill="#fff" font-size="25" font-weight="600">Laptop requests</text>
+      <rect x="816" y="271" width="72" height="29" rx="6" fill="#362b3f"/><text x="852" y="291" text-anchor="middle" fill="#e3dce9" font-size="14">Slack</text>
+      <path d="M899 286h29m-6-5 6 5-6 5" fill="none" stroke="#bd9fd7" stroke-width="1.5"/>
+      <rect x="940" y="271" width="76" height="29" rx="6" fill="#362b3f"/><text x="978" y="291" text-anchor="middle" fill="#e3dce9" font-size="14">Linear</text>
+      <text x="816" y="330" fill="#c1b7cb" font-size="16">3 requests. One task worth checking.</text>
+      <rect x="816" y="356" width="97" height="36" rx="7" fill="#ffb552"/><text x="864" y="380" text-anchor="middle" fill="#211220" font-size="15" font-weight="600">Build it</text>
+      <text x="928" y="379" fill="#c1b7cb" font-size="14">Keep approval with a person.</text>
+      <g font-size="14" letter-spacing="1.5" fill="#ffbd69">
+        <text x="61" y="510">01 / READ</text><text x="478" y="510">02 / CHECK</text><text x="890" y="510">03 / CHOOSE</text>
+      </g>
+      <g font-size="21" fill="#e4dce9">
+        <text x="61" y="549">The places you work</text><text x="478" y="549">The work and its evidence</text><text x="890" y="549">Your next automation</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "n8n-automation-mining",
+  "owner": {
+    "name": "n8n"
+  },
+  "plugins": [
+    {
+      "name": "automation-mining",
+      "source": "./",
+      "description": "Find repeated manual work in activity records and propose automations with source evidence."
+    }
+  ],
+  "metadata": {
+    "description": "Find repeated manual work with the n8n automation-mining skill."
+  }
+}

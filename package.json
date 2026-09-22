@@ -1,0 +1,45 @@
+{
+  "name": "@n8n/automation-mining-skill",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Find repeated manual work in activity records and propose automations with source evidence.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n8n-io/automation-mining-skill.git"
+  },
+  "keywords": [
+    "pi-package",
+    "agent-skills",
+    "automation-mining",
+    "workflow-automation",
+    "n8n",
+    "claude-code",
+    "codex"
+  ],
+  "files": [
+    "skills/",
+    "assets/",
+    ".claude-plugin/",
+    ".codex-plugin/",
+    ".agents/plugins/",
+    "LICENSE",
+    "docs/"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  },
+  "scripts": {
+    "check": "python3 scripts/package.py check",
+    "build": "python3 scripts/package.py build",
+    "test": "python3 -m unittest discover -s scripts -p \"test_*.py\"",
+    "version": "python3 scripts/package.py sync"
+  },
+  "homepage": "https://github.com/n8n-io/automation-mining-skill#readme",
+  "bugs": {
+    "url": "https://github.com/n8n-io/automation-mining-skill/issues"
+  },
+  "author": "n8n"
+}
