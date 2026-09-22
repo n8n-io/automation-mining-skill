@@ -37,7 +37,7 @@
     "test": "python3 -m unittest discover -s scripts -p \"test_*.py\"",
     "version": "python3 scripts/package.py sync"
   },
-  "homepage": "https://github.com/n8n-io/automation-mining-skill#readme",
+  "homepage": "https://automation-mining-skill.pages.dev/",
   "bugs": {
     "url": "https://github.com/n8n-io/automation-mining-skill/issues"
   },

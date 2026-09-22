@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://automation-mining-skill.pages.dev/">Website</a> ·
   <a href="#quick-start"><strong>Get started</strong></a> ·
   <a href="examples/laptop-requests/README.md">Try the example</a> ·
   <a href="docs/installation.md">Installation guide</a> ·

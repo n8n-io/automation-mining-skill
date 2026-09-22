@@ -18,7 +18,7 @@
     "capabilities": [
       "Instructions"
     ],
-    "websiteURL": "https://github.com/n8n-io/automation-mining-skill",
+    "websiteURL": "https://automation-mining-skill.pages.dev/",
     "defaultPrompt": [
       "Use automation-mining to find repeated manual work in these activity records.",
       "Use automation-mining on one work source. Ask me about my role and the time window before reading."
