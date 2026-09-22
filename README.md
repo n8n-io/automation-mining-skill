@@ -17,3 +17,7 @@ a separate task after review.
 Available under the [MIT License](LICENSE).
 
 Try the [synthetic laptop example](examples/laptop-requests/README.md) without a connection.
+
+Read the [method and limits](METHOD.md), [paper](paper/taxonomy_skill.pdf), and
+[study records](research/README.md). The study uses synthetic activity. It does
+not measure time saved in use.
