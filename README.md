@@ -15,3 +15,5 @@ Review tool permissions before you connect a source. Building an automation is
 a separate task after review.
 
 Available under the [MIT License](LICENSE).
+
+Try the [synthetic laptop example](examples/laptop-requests/README.md) without a connection.

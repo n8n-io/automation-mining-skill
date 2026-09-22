@@ -1,0 +1,61 @@
+{
+  "proposals": [
+    {
+      "id": "P-01",
+      "headline": "Create Linear tickets from laptop requests",
+      "job_observed": "The operations coordinator copied three laptop requests from Slack into Linear, entering the requester, laptop model, team, and cost center. Each ticket then waited for a manager to approve the purchase.",
+      "fix": "Input: a laptop request in Slack. Action: map the requester, model, team, and cost center to a Linear ticket; check the request ID for an existing ticket and route missing or ambiguous fields to the coordinator. Output: one ticket waiting for manager approval. Confirm source events, field mappings, and write access before building.",
+      "trigger_type": "message_received",
+      "trigger_description": "A person submits a laptop request in Slack. Event delivery support is not established.",
+      "unit_of_work": "One distinct laptop request identified by its LAP request ID.",
+      "business_outcome": "The request is available in Linear for manager review without repeated manual entry.",
+      "source_system": "Slack",
+      "destination_system": "Linear",
+      "remaining_human_work": "The manager approves or rejects the purchase. The coordinator handles missing or ambiguous request details and failed writes.",
+      "kind": "build",
+      "claimed_occurrences": 3,
+      "evidence": [
+        "slack-request-1",
+        "slack-copy-1",
+        "linear-ticket-1",
+        "slack-request-2",
+        "slack-copy-2",
+        "linear-ticket-2",
+        "slack-request-3",
+        "slack-copy-3",
+        "linear-ticket-3"
+      ],
+      "material_unknowns": [
+        "Owner approval is not established.",
+        "Slack event access and Linear write access are not established.",
+        "The destination fields, request ID matching rule, and failure routing need confirmation."
+      ],
+      "work_instances": [
+        {
+          "unit_id": "LAP-001",
+          "evidence": [
+            "slack-request-1",
+            "slack-copy-1",
+            "linear-ticket-1"
+          ]
+        },
+        {
+          "unit_id": "LAP-002",
+          "evidence": [
+            "slack-request-2",
+            "slack-copy-2",
+            "linear-ticket-2"
+          ]
+        },
+        {
+          "unit_id": "LAP-003",
+          "evidence": [
+            "slack-request-3",
+            "slack-copy-3",
+            "linear-ticket-3"
+          ]
+        }
+      ]
+    }
+  ]
+}
