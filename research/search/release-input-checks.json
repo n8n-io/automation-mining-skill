@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "original_release_validation_sha256": "adf1c892403b7669a2ca69350a24808a586cfe8ad03b26477ed1234952d38dc2",
+  "original_release_code_sha256": "9b8ef38f76c3c0d39665e463622753d329b9f91e40d5966f1287e0f91c4a364f",
+  "additional_check_code_sha256": "476ef84161cfa8dcc97db55b4596139eee91a1d52eaf5fe3289893937a421b1c",
+  "training_source_lineage_sha256": "178848f7597727943f729f2582372760ebf3c76367566283773cdf5149dbcd4f",
+  "training_privacy_input_sha256": "bbc027f16b7f6f347d2b2b76c62b5559b3136b5d38df5889bdb6ae9b74703aaa",
+  "training_audit_matches_search_freeze": true,
+  "checkpoint_history_verified": true,
+  "original_privacy_input_unchanged": true,
+  "numeric_and_analysis_hashes_unchanged": true,
+  "scope": "Additional input checks after the initial study validation. No study input, instruction, score, or outcome changes. The study history and evaluation code are not included in this repository."
+}

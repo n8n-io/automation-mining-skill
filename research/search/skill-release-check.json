@@ -1,0 +1,198 @@
+{
+  "metric_rules_passed": false,
+  "checks": [
+    {
+      "check": "fixed_primary_rule",
+      "passed": false
+    },
+    {
+      "check": "complete_scores",
+      "passed": false
+    },
+    {
+      "check": "useful_proposal_quality",
+      "reader": "sonnet",
+      "reference": 0.3903735632183908,
+      "candidate": 0.4099137931034483,
+      "passed": true
+    },
+    {
+      "check": "useful_proposal_quality",
+      "reader": "gpt",
+      "reference": 0.7952586206896551,
+      "candidate": 0.7511494252873564,
+      "passed": false
+    },
+    {
+      "check": "verified_task_recall",
+      "reader": "sonnet",
+      "reference": 0.45232067510548524,
+      "candidate": 0.5611814345991561,
+      "passed": true
+    },
+    {
+      "check": "verified_task_recall",
+      "reader": "gpt",
+      "reference": 0.7312236286919831,
+      "candidate": 0.7578059071729958,
+      "passed": true
+    },
+    {
+      "check": "pooled_verified_precision",
+      "reader": "combined",
+      "reference": 0.7596371882086168,
+      "candidate": 0.7237479806138933,
+      "passed": false
+    },
+    {
+      "check": "pooled_verified_precision",
+      "reader": "sonnet",
+      "reference": 0.6258064516129033,
+      "candidate": 0.5694444444444444,
+      "passed": false
+    },
+    {
+      "check": "pooled_verified_precision",
+      "reader": "gpt",
+      "reference": 0.8321678321678322,
+      "candidate": 0.8064516129032258,
+      "passed": false
+    },
+    {
+      "check": "useful_report_rate",
+      "reader": "combined",
+      "reference": 0.5043103448275862,
+      "candidate": 0.43103448275862066,
+      "passed": false
+    },
+    {
+      "check": "useful_report_rate",
+      "reader": "sonnet",
+      "reference": 0.31896551724137934,
+      "candidate": 0.28448275862068967,
+      "passed": false
+    },
+    {
+      "check": "useful_report_rate",
+      "reader": "gpt",
+      "reference": 0.6896551724137931,
+      "candidate": 0.5775862068965517,
+      "passed": false
+    },
+    {
+      "check": "nonempty_output_on_positive_keys",
+      "reader": "combined",
+      "reference": 0.9810126582278481,
+      "candidate": 1.0,
+      "passed": true
+    },
+    {
+      "check": "nonempty_output_on_positive_keys",
+      "reader": "sonnet",
+      "reference": 0.9620253164556962,
+      "candidate": 1.0,
+      "passed": true
+    },
+    {
+      "check": "nonempty_output_on_positive_keys",
+      "reader": "gpt",
+      "reference": 1.0,
+      "candidate": 1.0,
+      "passed": true
+    }
+  ],
+  "conditions": {
+    "baseline": {
+      "combined": {
+        "reports": 232,
+        "statuses": {
+          "complete": 230,
+          "miner_failed": 2
+        },
+        "useful_proposal_quality": 0.592816091954023,
+        "verified_task_recall": 0.5917721518987342,
+        "pooled_verified_precision": 0.7596371882086168,
+        "useful_report_rate": 0.5043103448275862,
+        "nonempty_output_on_positive_keys": 0.9810126582278481,
+        "verified_proposals": 335,
+        "proposals": 441
+      },
+      "sonnet": {
+        "reports": 116,
+        "statuses": {
+          "complete": 114,
+          "miner_failed": 2
+        },
+        "useful_proposal_quality": 0.3903735632183908,
+        "verified_task_recall": 0.45232067510548524,
+        "pooled_verified_precision": 0.6258064516129033,
+        "useful_report_rate": 0.31896551724137934,
+        "nonempty_output_on_positive_keys": 0.9620253164556962,
+        "verified_proposals": 97,
+        "proposals": 155
+      },
+      "gpt": {
+        "reports": 116,
+        "statuses": {
+          "complete": 116
+        },
+        "useful_proposal_quality": 0.7952586206896551,
+        "verified_task_recall": 0.7312236286919831,
+        "pooled_verified_precision": 0.8321678321678322,
+        "useful_report_rate": 0.6896551724137931,
+        "nonempty_output_on_positive_keys": 1.0,
+        "verified_proposals": 238,
+        "proposals": 286
+      }
+    },
+    "skill": {
+      "combined": {
+        "reports": 232,
+        "statuses": {
+          "complete": 232
+        },
+        "useful_proposal_quality": 0.5805316091954024,
+        "verified_task_recall": 0.659493670886076,
+        "pooled_verified_precision": 0.7237479806138933,
+        "useful_report_rate": 0.43103448275862066,
+        "nonempty_output_on_positive_keys": 1.0,
+        "verified_proposals": 448,
+        "proposals": 619
+      },
+      "sonnet": {
+        "reports": 116,
+        "statuses": {
+          "complete": 116
+        },
+        "useful_proposal_quality": 0.4099137931034483,
+        "verified_task_recall": 0.5611814345991561,
+        "pooled_verified_precision": 0.5694444444444444,
+        "useful_report_rate": 0.28448275862068967,
+        "nonempty_output_on_positive_keys": 1.0,
+        "verified_proposals": 123,
+        "proposals": 216
+      },
+      "gpt": {
+        "reports": 116,
+        "statuses": {
+          "complete": 116
+        },
+        "useful_proposal_quality": 0.7511494252873564,
+        "verified_task_recall": 0.7578059071729958,
+        "pooled_verified_precision": 0.8064516129032258,
+        "useful_report_rate": 0.5775862068965517,
+        "nonempty_output_on_positive_keys": 1.0,
+        "verified_proposals": 325,
+        "proposals": 403
+      }
+    }
+  },
+  "scope": "Each listed value must be at least the reference value on the same final-test companies. These are observed nonregression checks, not separate claims of statistical superiority.",
+  "plan_sha256": "8ec359d54a9f8648487b9af62444f8012797a996aa05c96d77187c4103337098",
+  "selected": "round-0006-0",
+  "selected_guide_sha256": "3842b01850ead0466c0d1453e9eac8db35222c98423a5e425e5073dcdb66156e",
+  "source_and_replay_checks_passed": true,
+  "selected_guide_released": true,
+  "cost_records_complete": false,
+  "eligible_for_skill_package_checks": false
+}

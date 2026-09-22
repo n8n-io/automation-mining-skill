@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "environment": "Python 3.14.7; pinned packages; PATH only; no API keys; socket access disabled.",
+  "analysis_replay": {
+    "byte_identical": true,
+    "sha256": "da1ba401f8ab1e37ce50230eb1d7b207f0472eabbf52412db1e158cf60c8ab52"
+  },
+  "public_score_replays": {
+    "validation": 336,
+    "test": 432
+  },
+  "all_accepted_response_score_replays": {
+    "validation": 360,
+    "test": 464
+  },
+  "dataset_hashes_verified": 176,
+  "guide_bodies_verified": 3,
+  "release_validation_sha256": "adf1c892403b7669a2ca69350a24808a586cfe8ad03b26477ed1234952d38dc2",
+  "scope": "Saved scores and the paired analysis are reproduced without model calls. All numeric outcomes remain when a text packet is withheld."
+}

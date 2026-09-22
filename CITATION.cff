@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "To cite the study, use the paper below."
+type: software
+title: Automation mining
+version: 1.0.0
+url: https://github.com/n8n-io/automation-mining-skill
+license: MIT
+authors:
+  - name: n8n
+preferred-citation:
+  type: report
+  title: Improving Automation Discovery with a Workflow Taxonomy
+  version: "2"
+  authors:
+    - family-names: Alises
+      given-names: Albert
+  institution:
+    name: n8n
+  year: 2026
+  month: 9
+  date-published: 2026-09-09
+  url: https://github.com/n8n-io/automation-mining-skill/blob/main/paper/taxonomy_skill.pdf

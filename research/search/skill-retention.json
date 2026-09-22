@@ -1,0 +1,10 @@
+{
+  "decision": "Retain the confirmed procedure. The further revision did not pass the release checks.",
+  "skill_version": "0.5.0",
+  "source_guide_sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87",
+  "skill_file_sha256": "a6a8f91f22fa89c77eb6a4926279d9e336b7b46276cd6bfc2d0c8f4623dde398",
+  "schema_sha256": "8347afdcee2a25e76499053c410a449be9ebbebc75ad5c88c5b82b2ece13b436",
+  "skill_release_check_sha256": "c9df5c8868582ee626ed967f417b9e1dc6d77fd75f8c4b02fed9bc04c7929094",
+  "copied_artifacts_match": true,
+  "scope": "The new revision does not meet the recorded release rule. The existing skill and schema stay byte-identical to their confirmed test artifacts."
+}
