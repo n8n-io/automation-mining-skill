@@ -6,5 +6,6 @@
   "test_freeze_sha256": "2e5b776c212447fa4e86867b0735b46cf2eda2c759298800897ebab47f04620c",
   "training_comparison_plan_sha256": "c314289bf2bb583ea7224c5a0d4a4465a773b3c3bb07509f2220f8b58f7047bd",
   "skill_file_sha256": "a6a8f91f22fa89c77eb6a4926279d9e336b7b46276cd6bfc2d0c8f4623dde398",
-  "scope": "The Markdown body is the exact tested system text. Routing metadata is outside the experiment. The study tests fixed activity exports."
+  "scope": "The Markdown body is the exact tested system text. Routing metadata is outside the experiment. The study tests fixed activity exports.",
+  "instructions_scope": "Count Unicode characters from # Automation discovery to before Find automation candidates in the supplied fictional activity., with leading and trailing whitespace removed. This excludes frontmatter and the appended output contract. source_guide_sha256 hashes this same UTF-8 text; skill_file_sha256 hashes the complete file."
 }

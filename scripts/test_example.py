@@ -35,3 +35,7 @@ class ExampleTests(unittest.TestCase):
     def test_missing_task_fails(self):
         with self.assertRaises(ValueError):
             check_report({'proposals': []})
+
+
+if __name__ == '__main__':
+    unittest.main()

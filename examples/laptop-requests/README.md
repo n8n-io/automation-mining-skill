@@ -54,3 +54,13 @@ python3 scripts/check_example.py routine-report.json --routine-only
 ```
 
 The example checks basic behavior. It does not measure proposal quality in real use.
+
+## Run the tests
+
+From the repository root:
+
+```sh
+python3 -m unittest discover -s scripts -p 'test_*.py'
+```
+
+To run only the example tests, use `python3 scripts/test_example.py`.

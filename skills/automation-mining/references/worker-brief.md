@@ -5,7 +5,7 @@ ledgers; you merge (SKILL.md, step 3 "In parallel"). Slice by window or by
 surface, never by pattern. Hand each worker its slice as row indices or an
 explicit id list, never as hand-typed timestamp endpoints — a typed boundary
 off by one leaves a unit that nobody reads. A slice is what a worker
-finishes in ten to fifteen reads. Workers run on the lightest model that
+finishes in ten to fifteen units. Workers run on the lightest model that
 reads reliably and never inherit your conversation: the brief below is all
 they get.
 
@@ -13,9 +13,9 @@ Before the first dispatch, prove `{ledger path}` from a worker's seat: one
 probe worker writes a line there and reads it back. Sandboxed hosts give
 workers a different writable root from yours, and a worker that cannot
 write appends nothing and compiles at the end, which is the failure the
-brief forbids. If no path takes a worker's write, fill the fallback slot
-below and take each ledger as the worker's whole reply, written to disk by
-you before the merge. Assume a returned worker cannot be asked a follow-up:
+brief forbids. Select exactly one ledger mode below and remove the other
+mode from the brief. If no path accepts a worker's write, assign one unit
+per worker. Save each returned ledger before the merge. Assume a returned worker cannot be asked a follow-up:
 everything the merge needs is in the ledger, or it costs a fresh worker.
 
 ## The brief
@@ -34,13 +34,15 @@ digests, scheduled reports, footers — go into the ledger from the listing
 even when nobody replied: they are the automation estate. Log them under
 Units with the bot or workflow as what resolved them, the series once under
 Trails, and open one unit per series to read its footer, not every post.
-Append the ledger below to `{ledger path}` after every unit — never compile
-it from memory at the end — and stop at the slice end; what you did not
-reach goes under skipped. {Fallback, only when the lead found no path a
-worker can write: "There is no ledger path. Keep the ledger as the body of
-your reply, writing each unit's line as you finish that unit, and return
-the whole ledger as your final message, with `returned inline` on its
-first line."}
+Stop at the slice end. List units you did not reach under skipped.
+
+{Insert exactly one of these ledger modes, with all slots filled:}
+
+- **File mode:** Append the ledger to `{ledger path}` after each unit. Do not
+  reconstruct the ledger from memory at the end.
+- **Reply mode:** No writable ledger path is available. Your slice contains
+  exactly one unit. Return its complete ledger as your final message. Put
+  `returned inline` on the first line. The lead will save it before the merge.
 
 Rules that do not bend:
 
@@ -84,7 +86,7 @@ read: {N} units, {first date} → {last date}; skipped: {what and why}
 
 ## Merging — you, not the workers
 
-1. Read every ledger. One returned inline is written to `{ledger path}` by you first, untouched, and the shape check names it as compiled at slice end. Match candidate patterns across slices by the job they describe, not by the name a worker gave them.
+1. Read every ledger. One returned inline is written to `{ledger path}` by you first, untouched, and the shape check states that each single-unit ledger was saved from a worker reply. Match candidate patterns across slices by the job they describe, not by the name a worker gave them.
 2. Recount each merged pattern from unit ids; drop duplicates across slices. Never add up workers' counts or impressions.
 3. Spot-check up to three units per surviving pattern by reading them yourself — all of them when the pattern has fewer than three. A pattern whose spot-check fails goes back to the ledger, not to the shape check.
 4. Merge trails across ledgers the same way; they feed the shape check.

@@ -4,11 +4,12 @@ A trail is a specific pointer from the surface you read to one you haven't.
 It earns an *ask*, never an automatic open (SKILL.md, step 5). The same ask
 applies when the host cannot read that surface: name the connection needed
 and both payoffs; the user decides. A closed surface never cancels a trail —
-coverage lists it as unconnected, asked. Each earned surface is read through
-two lenses, in this order:
+coverage lists it as unconnected, asked. Read only within the scope the owner
+approved. For verification only, use Correlate and stop. When the owner also
+approves mining, use Correlate, then Mine:
 
 - **Correlate** — bounded probes that support or kill the patterns you already hold. Cheap, and it tells the owner whether the first pass was right.
-- **Mine** — the same bounded first pass the first surface got, in this surface's own unit. This is where new patterns come from; the first surface's ceiling is the coordination work it shows.
+- **Mine** — the same complete read the first surface got, in this surface's own unit and approved time window. Follow the listing and reading rules in SKILL.md step 3; do not sample only for known patterns. This is where new patterns come from; the first surface's ceiling is the coordination work it shows.
 
 Then one merged shape check. Name new trail types when you meet them; every
 unfollowed trail goes in the coverage section.
