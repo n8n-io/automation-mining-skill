@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="660" viewBox="0 0 1280 660" role="img" aria-labelledby="title desc">
+  <title id="title">Three requests. One task. Your decision.</title>
+  <desc id="desc">A synthetic laptop request example. Copy requests from Slack into Linear, prevent duplicate records, and keep approval with a person. Three request IDs support the count. Check access and event support before building.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#20162d"/><stop offset="1" stop-color="#100c19"/></linearGradient></defs>
+  <rect width="1280" height="660" rx="20" fill="url(#bg)"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="52" y="51" fill="#ffb552" font-size="13" letter-spacing="2">A PROPOSAL YOU CAN CHECK</text>
+    <text x="1228" y="51" text-anchor="end" fill="#b8acc5" font-size="13">SYNTHETIC EXAMPLE</text>
+    <text x="52" y="109" fill="#fff" font-size="37" font-weight="600" letter-spacing="-1">Three requests. One task. Your decision.</text>
+    <text x="52" y="145" fill="#bfb4ca" font-size="19">Create a Linear ticket from a Slack laptop request.</text>
+    <rect x="52" y="178" width="566" height="240" rx="12" fill="#ffffff" fill-opacity=".035" stroke="#44344f"/>
+    <rect x="638" y="178" width="590" height="240" rx="12" fill="#ffffff" fill-opacity=".035" stroke="#44344f"/>
+    <text x="78" y="214" fill="#c39aec" font-size="13" letter-spacing="1.5">WHAT HAPPENS TODAY</text>
+    <text x="78" y="254" fill="#fff" font-size="23">A person reads the request in Slack.</text>
+    <text x="78" y="290" fill="#fff" font-size="23">Copies its details into Linear.</text>
+    <text x="78" y="326" fill="#fff" font-size="23">Posts the ticket link back in Slack.</text>
+    <text x="78" y="383" fill="#bfb4ca" font-size="17">Observed in three distinct laptop requests.</text>
+    <text x="664" y="214" fill="#ffb552" font-size="13" letter-spacing="1.5">WHAT COULD CHANGE</text>
+    <text x="664" y="254" fill="#fff" font-size="23">Read the fields and check for duplicates.</text>
+    <text x="664" y="290" fill="#fff" font-size="23">Create the ticket and return its link.</text>
+    <text x="664" y="326" fill="#fff" font-size="23">Keep approval and exceptions with a person.</text>
+    <text x="664" y="383" fill="#bfb4ca" font-size="17">Check access and event support before building.</text>
+    <text x="52" y="465" fill="#bfb4ca" font-size="14" letter-spacing="1">EVIDENCE</text>
+    <g font-family="monospace" font-size="16" fill="#dfd1eb">
+      <text x="166" y="465">LAP-001</text><text x="295" y="465">LAP-002</text><text x="424" y="465">LAP-003</text>
+    </g>
+    <text x="1228" y="465" text-anchor="end" fill="#bfb4ca" font-size="17">Count requests, not messages.</text>
+    <path d="M52 495h1176" stroke="#44344f"/>
+    <rect x="52" y="526" width="168" height="54" rx="9" fill="#ffb552"/>
+    <text x="136" y="560" text-anchor="middle" fill="#211220" font-size="18" font-weight="600">Build it</text>
+    <rect x="236" y="526" width="254" height="54" rx="9" fill="#ffffff" fill-opacity=".035" stroke="#655173"/>
+    <text x="363" y="560" text-anchor="middle" fill="#e3dce9" font-size="18">Real, but not worth it</text>
+    <rect x="506" y="526" width="230" height="54" rx="9" fill="#ffffff" fill-opacity=".035" stroke="#655173"/>
+    <text x="621" y="560" text-anchor="middle" fill="#e3dce9" font-size="18">You misread this</text>
+    <text x="1228" y="559" text-anchor="end" fill="#bfb4ca" font-size="17">You choose the next step.</text>
+    <text x="52" y="618" fill="#a99ab8" font-size="14">Explore the source records and expected report in examples/laptop-requests/.</text>
+  </g>
+</svg>

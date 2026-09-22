@@ -1,0 +1,72 @@
+{
+  "scope": "Hashes cover only the 15 study, procedure, and paper files listed here. Private repository names, commit IDs, and source paths are omitted. Metadata notes define instruction counts, comparisons, validation limits, and study versions. Study results and the tested procedure are unchanged.",
+  "files": {
+    "paper/taxonomy_skill.pdf": {
+      "sha256": "815c636ac144b53805d7cd0fb8dc5ac4e40d00678dc75d951a5b1bee482a7ed7",
+      "bytes": 79665,
+      "changes": "Editorial revision 3. Revise language and structure; clarify comparison and validation scopes. Preserve all numeric table entries, study results, and references."
+    },
+    "paper/taxonomy_skill.tex": {
+      "sha256": "df81437b8969f65fc8f06234ab8c47f54579bfed87e1d820a574853c4e41f1f0",
+      "bytes": 51442,
+      "changes": "Editorial revision 3. Revise language and structure; clarify comparison and validation scopes. Preserve all numeric table entries, study results, and references."
+    },
+    "skills/automation-mining/references/workflow-discovery.artifact.json": {
+      "sha256": "fde1ea3b1c74d032222c15bab40a19180c0aa1940a812b8593f9157b62bca9e8",
+      "bytes": 1048
+    },
+    "skills/automation-mining/references/workflow-discovery.md": {
+      "sha256": "a6a8f91f22fa89c77eb6a4926279d9e336b7b46276cd6bfc2d0c8f4623dde398",
+      "bytes": 9678
+    },
+    "skills/automation-mining/references/workflow-discovery.schema.json": {
+      "sha256": "8347afdcee2a25e76499053c410a449be9ebbebc75ad5c88c5b82b2ece13b436",
+      "bytes": 2671
+    },
+    "research/confirmed/analysis.json": {
+      "sha256": "c68865afad958393ab66fdd562a19a23a159bdf830511f48f1965bebed946500",
+      "bytes": 15028
+    },
+    "research/confirmed/release-validation.json": {
+      "sha256": "1bbe34cd0cd7eb67d5cf99684be1ab2530b72d2a11b83d8874a133b65b8bd0b1",
+      "bytes": 20146
+    },
+    "research/confirmed/training-comparison.json": {
+      "sha256": "a94d523598cb1ba828377568f1d40efdd21b47ae850262f0ac0d467690f29c47",
+      "bytes": 10817
+    },
+    "research/search/analysis.json": {
+      "sha256": "da1ba401f8ab1e37ce50230eb1d7b207f0472eabbf52412db1e158cf60c8ab52",
+      "bytes": 15917
+    },
+    "research/search/offline-validation.json": {
+      "sha256": "803ce11b3560659595db45bd7fa08c8e4b666f47c2b9411e10ab428db8a46512",
+      "bytes": 729
+    },
+    "research/search/release-input-checks.json": {
+      "sha256": "8667047b1242e8fd25e978f73883de1d0acdca23299f7d0c4124091a4e7a5e5c",
+      "bytes": 927
+    },
+    "research/search/release-validation.json": {
+      "sha256": "adf1c892403b7669a2ca69350a24808a586cfe8ad03b26477ed1234952d38dc2",
+      "bytes": 28978
+    },
+    "research/search/selection.json": {
+      "sha256": "c32543941faaed7b7f945f1d212e6ac6871bb67bfe8475e1d9ce2ef6d1e61159",
+      "bytes": 1236
+    },
+    "research/search/skill-release-check.json": {
+      "sha256": "c9df5c8868582ee626ed967f417b9e1dc6d77fd75f8c4b02fed9bc04c7929094",
+      "bytes": 5800
+    },
+    "research/search/skill-retention.json": {
+      "sha256": "358097b8919fd570bc16171a717e400ffd79f507c398694c593be64dff158b6e",
+      "bytes": 793
+    }
+  },
+  "paper_revision": {
+    "version": 3,
+    "date": "2026-09-22",
+    "changes": "Editorial revision. Numeric table entries, study results, and references are unchanged. The tested procedure is unchanged."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "n8n-automation-mining",
+  "interface": {
+    "displayName": "n8n automation mining"
+  },
+  "plugins": [
+    {
+      "name": "automation-mining",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/n8n-io/automation-mining-skill.git",
+        "ref": "v1.0.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
