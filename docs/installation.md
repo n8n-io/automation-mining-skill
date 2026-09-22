@@ -55,8 +55,7 @@ See the [Claude Code plugin guide](https://code.claude.com/docs/en/discover-plug
 
 ## Codex plugin
 
-This route requires the `v1.0.0` release tag and a client with plugin support.
-Until then, use Skills CLI after merge or the local files.
+This route requires a client with plugin support.
 
 Run these commands in your terminal:
 
