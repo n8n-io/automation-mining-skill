@@ -1,0 +1,640 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,booktabs,tabularx,amsmath,graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{0.2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\hypersetup{pdftitle={Improving Automation Discovery with a Workflow Taxonomy - Version 3},pdfauthor={Albert Alises}}
+\title{Improving Automation Discovery with a Workflow Taxonomy}
+\author{Albert Alises\\n8n\\\texttt{albert.alises@n8n.io}}
+\date{22 September 2026\\Version 3}
+\begin{document}
+\maketitle
+\begin{abstract}
+Choosing what to automate requires evidence of the work people do. This study tests whether existing n8n workflow descriptions can help an AI agent identify that work in activity records. The descriptions supplied possible manual tasks, which guided the generation of synthetic Slack messages, Notion pages, Linear issues, and Salesforce changes.
+
+Errors on development examples guided revisions to the agent's skill: a text file that directs how it finds tasks, checks evidence, and proposes automations. A separate test compared the starting skill, the revised skill, and a short prompt on 57 new synthetic companies, each with its own records and a hidden task list.
+
+Across two reader models, the revised skill increased mean report quality from 44.7\% to 53.0\% and verified task recall from 28.2\% to 51.7\% relative to the starting skill. Report quality measures the share of proposals that pass evidence, work-removal, and count checks; recall measures the share of known tasks found with valid evidence. Both gains passed the rule set before the test. The separate comparison with the short prompt did not establish a quality gain.
+
+A second round of instruction editing lasted ten hours. On 116 new synthetic companies, the selected candidate improved recall but did not establish a gain in report quality. The first-round skill was therefore retained. These results concern task discovery in generated records. They do not establish user demand or time saved by deployed automations.
+
+\end{abstract}
+
+\section{The problem: deciding what to automate}
+Tools such as n8n help people build automations. Before building one, a person still has to decide which work is worth changing.
+
+That work is often spread across several tools. A request arrives in chat. Someone checks a document, copies fields into a business system, and posts a reply. Because no single record describes the whole task, an agent must connect the records, identify what the person did, and explain how an automation would remove some of that work.
+
+For example, suppose someone receives an invoice by email and copies its details into a payment register. A useful proposal would describe how to extract those details, check for an existing entry, and create the new row. A reminder to enter the invoice would leave the copying with the person.
+
+The agent must also count the work correctly. Three messages about one invoice are evidence of one invoice being processed, not of three separate invoices, so a proposal that counts messages can overstate the opportunity.
+
+A live product must also account for the user's role, goals, and access to data. The user decides whether a proposed change is useful. This study asks a narrower question: \textbf{given a fixed set of workplace records, can revised instructions help an agent identify tasks and support its proposals with evidence?}
+
+The first study round produced a revision that passed a separate test against the starting skill. A second round sought a further improvement on new test cases.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw=black!45,rounded corners=3pt,fill=black!3,
+    text width=4.2cm,minimum height=1.4cm,align=center,inner sep=6pt,font=\small},
+  flow/.style={-{Stealth[length=2mm]},thick,draw=black!65}]
+\node[box] (practice) at (0,0) {59 practice companies\\39 for editing; 20 for selection};
+\node[box] (revision) at (5,0) {Selected revision\\Instructions fixed before testing};
+\node[box,fill=green!6] (first) at (10,0) {57 new test companies\\Passes vs starting skill};
+\node[box] (secondpractice) at (0,-3.4) {116 practice companies\\59 earlier + 57 from the first test};
+\node[box] (selection) at (5,-3.4) {60 new validation companies\\Select a round-two candidate};
+\node[box,fill=blue!5] (second) at (10,-3.4) {116 new test companies\\Candidate does not pass};
+\draw[flow] (practice) -- (revision);
+\draw[flow] (revision) -- (first);
+\draw[flow] (secondpractice) -- (selection);
+\draw[flow] (selection) -- (second);
+\draw[flow] (first.south) -- (10,-1.7) -- (0,-1.7) -- (secondpractice.north);
+\end{tikzpicture}
+\caption{Two rounds of one study. The second round reused the first test for practice, then used new companies for selection and testing. The first-round skill was retained.}
+\end{figure}
+
+\section{Dataset construction}
+\subsection{Workflow sources}
+The source was a private collection of n8n workflow descriptions, business categories, and successful-execution records. Each description explained what an existing automation did.
+
+The business categories formed a \textbf{taxonomy} of workflow functions, such as sales and finance. Selection across these categories provided examples from several areas of work.
+
+Selected workflow groups had sustained successful use across several business areas. Execution records showed that the automations had been used. They did not establish that a person had previously performed the same work, or that another user would want it automated.
+
+Each selected group supplied the starting material for one synthetic company: a generated name and a set of related workplace records. A company in this study is a dataset, not an observed organization.
+
+\subsection{From workflow to manual task}
+A language model read each selected workflow description and wrote a possible task that a person could perform. A model from the other model family checked that task against the same description, testing whether the description supported the operation and whether the task duplicated another one.
+
+The invoice example below illustrates the conversion without reproducing a customer record.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Task element} & \textbf{Invoice example} \\
+\midrule
+Existing automation & Read a new invoice and add its details to a payment register. \\
+Possible human task & Read each invoice and copy its details into the register. \\
+What starts the task & A new invoice arrives. \\
+One occurrence of the task & One invoice is entered. \\
+Source and destination & The invoice supplies the fields; the register receives them. \\
+Expected result & One correct register entry for that invoice. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+A task definition included its trigger, input, operation, destination, and result. This kept the intended outcome intact: copying one field, for example, is only part of entering an invoice.
+
+\subsection{Activity generation}
+A model then generated records around the selected tasks: a Slack request, a Notion note about completed work, a Linear issue, or a Salesforce field change. The records also contained routine conversation and work already done by software.
+
+Two formats organized the activity. One followed conversations across people and channels; the other covered fourteen days of work and interruptions. Both mixed task evidence with unrelated activity, so tasks did not appear as isolated, labelled examples.
+
+Each record identified its source tool, type, time, content, and the person or service responsible for the action. Tool-specific fields described details such as an issue state or a changed Salesforce field. This common structure supported citation and validation. The records did not come from live integrations.
+
+\subsection{Hidden task and instance lists}
+Each company had two separate records:
+
+\begin{itemize}
+\item \textbf{The activity records:} what the agent could read when it searched for automation opportunities.
+\item \textbf{The answer list:} the tasks placed in those records, the separate occurrences of each task, and the evidence for each occurrence.
+\end{itemize}
+
+The answer list supplied the scoring reference. The agent did not receive it during the final test.
+
+For the invoice illustration, the answer list might name "enter invoices in the payment register" and record three separate invoices. A request and a later completion note about the same invoice would support one occurrence, and the answer list would keep them together.
+
+Figure 2 separates the agent's inputs from the scoring reference.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw=black!45,rounded corners=3pt,fill=black!3,
+    text width=5cm,align=center,inner sep=8pt,font=\small},
+  flow/.style={-{Stealth[length=2mm]},thick,draw=black!65}]
+\node[box] (source) at (0,0) {Workflow descriptions};
+\node[box] (tasks) at (0,-1.25) {Possible manual tasks};
+\node[box] (records) at (-3.3,-2.65) {Synthetic workplace records};
+\node[box,fill=blue!5] (answers) at (3.3,-2.65) {Answer list: tasks, occurrences, and evidence};
+\node[box] (reader) at (-3.3,-4.15) {Agent reads records with one skill version};
+\node[box] (proposals) at (-3.3,-5.65) {Automation proposals};
+\node[box] (checks) at (0,-7.25) {Evaluators and code check proposals};
+\draw[flow] (source) -- (tasks);
+\draw[flow] (tasks) -- (records);
+\draw[flow] (tasks) -- (answers);
+\draw[flow] (records) -- (reader);
+\draw[flow] (reader) -- (proposals);
+\draw[flow] (proposals) -- (checks);
+\draw[flow] (answers.south) |- (checks.east);
+\draw[flow] (records.west) -- ++(-0.5,0) |- ([yshift=-0.8cm]checks.south) -- (checks.south);
+\end{tikzpicture}
+\caption{The agent reads workplace records. The answer list is kept for scoring. The checks use the proposals, the records, and the answer list.}
+\end{figure}
+The plan called for zero, one, three, or five tasks per company. A company could contain fewer tasks if the source descriptions did not support enough distinct operations. Companies with no tasks still contained routine discussion and automated work. They tested whether the agent could withhold unsupported proposals.
+
+\subsection{Construction checks}
+Code checked the record structure, dates, links, and task annotations, as well as who performed an action and how a field was changed. This distinction mattered: a service changing a Salesforce field is not evidence that a person copied it by hand.
+
+Source checks required valid links and rejected copied protected text. Only companies that passed the construction checks entered the test.
+
+Each selected workflow group had at most four attempts to produce valid activity. After a failed attempt, the model received the activity and the validation error for correction. A group that still failed was excluded, without replacement.
+
+The first final test started with 80 selected groups. Of these, 57 produced valid companies and 23 failed. Construction required 175 attempts, including 118 rejected attempts. The accepted companies contained 105 known tasks and 4,844 records; eighteen companies had no task on the answer list.
+
+The company list, records, and answer lists were fixed before testing. They could not change in response to the results.
+
+The reported gains apply to the 57 accepted companies. They do not establish the same gains across all 80 selected groups. Appendix B examines extreme assumptions about the excluded groups.
+
+\section{Instruction development}
+\subsection{Errors in the starting skill}
+The skill directs the agent to read activity, identify tasks, check evidence, and return proposals. Development changed these instructions, not the models' weights.
+
+Earlier development produced twelve candidate instruction files and 420 assessments across 35 companies. The \textbf{starting skill} had the highest report quality among complete candidates that met the recall and precision thresholds defined in Section 4.
+
+A development comparison on 59 companies supplied records, answer lists, reports, and scores for error analysis. Saved outputs were reused without repeating the model calls.
+
+One recurring error was finding only part of a task. The agent might propose copying a status into a note, while the observed task also required checking the status and opening an issue when it was wrong. That proposal would leave part of the work unexplained.
+
+Thirty-nine of the 59 companies supplied examples for instruction editing. The other twenty supported candidate selection. Neither group included companies from the final test.
+
+\subsection{Candidate instructions}
+Four requests produced candidate instruction files: two requests to Claude and two to GPT. Each received eight practice companies, including two with empty answer lists and six with tasks. The inputs also included the current instructions, both readers' earlier reports, and feedback on their errors.
+
+The requested changes were concrete:
+
+\begin{itemize}
+\item Describe the whole observed task, including the result the person produced.
+\item Count separate items of work, such as invoices or requests, rather than messages about those items.
+\item Cite records that show the person actually doing the work.
+\item Explain which part of the work an automation would remove.
+\item Allow one supported occurrence to establish a task, while requiring more than one to claim repetition.
+\item Return no proposals when the records do not support one.
+\end{itemize}
+
+Candidate instructions could not contain company names, record IDs, or answers from the practice cases. They had to describe a procedure that could apply to new records.
+
+A fixed list of permitted task types was removed. Evidence of the operation, rather than membership in a predefined category, determined whether a task qualified.
+
+\subsection{Selection before testing}
+Both reader models used each valid candidate on the same twenty selection companies, so each candidate had forty scheduled reports.
+
+Selection favored the highest report quality among candidates that met two thresholds: recall no more than five percentage points below the short prompt, and at least 65\% verified proposals. Missing judgments contributed zero during selection.
+
+Three of the four candidates met the thresholds. The selected file became the \textbf{revised skill}, with its text fixed before the final test. Selection on practice cases was not treated as evidence of improvement on new cases.
+
+Appendix A records selection scores and a change to the instruction-length limit. The final test compared complete files, not individual rules.
+
+\section{Evaluation}
+\subsection{Readers and instruction conditions}
+Claude Sonnet 5 and GPT-5.6 Sol each read every test company in three separate runs:
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Instruction version} & \textbf{What the model received} \\
+\midrule
+Starting skill & The instruction file used before the first revision. \\
+Revised skill & The file selected after learning from the practice cases. \\
+Short prompt & A request to find useful automation opportunities, cite evidence, and describe a concrete change. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+Every run received the complete activity for the company, the same required report fields, and a limit of five proposals. The same model settings and output limits applied across instruction versions, which made the instructions the main difference within each reader's comparison.
+
+Each company produced six reports: two readers multiplied by three instruction versions. Across 57 companies, this gave 342 reports.
+
+\subsection{Task identity and evidence checks}
+Every proposal had to describe the work observed, the proposed automation, the trigger, and the item being counted, as well as list separate occurrences with their supporting records. Remaining human work and unknown requirements were reported separately.
+
+Evaluation separated task identity from cited support. Did the proposal describe a task on the answer list? Did its citations support the observed work, proposed change, and count?
+
+Claude and GPT evaluated each proposal in separate calls. Neither received the instruction version or the identity of the reader that produced the report. A claim passed only when both evaluators agreed.
+
+Code performed additional checks. Cited records had to exist. The list of work occurrences had to contain distinct items, its citations had to appear in the proposal's evidence, and its length had to match a positive stated count. A verified proposal could not duplicate a known task already matched by another proposal, and the report had to stay within the five-proposal limit.
+
+A proposal was \textbf{verified} only if it passed every evidence and work-removal check. Its count, citations, and list of separate occurrences also had to pass. This was an automated assessment, and it did not mean that a person had approved the proposal or that the automation had been built.
+
+\subsection{Quality, recall, and precision}
+\textbf{Report quality} is the share of a report's proposals that pass verification. Three verified proposals out of four give a score of 75\%. Mean quality averages these report scores, with zero assigned to an empty report.
+
+\textbf{Verified task recall} is the share of known tasks covered by verified proposals. Finding two of four tasks gives 50\% recall. Recall applies only to companies with at least one task on the answer list. It measures recovery of the tasks placed in the records, not all possible automations for a real company.
+
+\textbf{Pooled precision} is the share of all returned proposals that pass verification. It divides the total verified proposals by the total returned proposals. For the revised skill in the first test, this was 154 out of 214, or 72.0\%.
+
+Quality and precision use different weights: quality gives each report the same weight, including reports with no proposals, while pooled precision gives each returned proposal the same weight. For example, one perfect one-proposal report and one empty report average 50\% quality, but have 100\% pooled precision.
+
+Returning no proposals can be correct when the records support no task. Empty reports still received zero quality credit because that score measures useful output, not error avoidance alone. Separate counts captured empty reports and \textbf{fully verified reports}: nonempty reports in which every proposal passed.
+
+\subsection{Paired comparisons and uncertainty}
+Comparisons paired instruction versions within each company. The analysis first calculated each reader's score change, then averaged the two changes for that company. Each company thus had equal weight, regardless of its number of records or proposals.
+
+A \textbf{bootstrap} estimated variation across companies. The analysis sampled companies with replacement 10,000 times and recalculated the mean paired change for each sample. The middle 95\% of estimates formed the reported interval.
+
+An interval entirely above zero supports a positive average change under this analysis. An interval that crosses zero does not establish which version is better on that measure. The interval is not a probability that one individual proposal is correct, nor does it measure variation across all possible language models or live companies.
+
+Fixed random seeds made sampling and job order repeatable.
+
+\subsection{Improvement rules and failed runs}
+For the revised skill to pass against the starting skill, the lower end of the 95\% interval had to be above zero for \textbf{both quality and recall}. Better recall alone was insufficient: finding more work should not be counted as a joint improvement if report quality did not also improve.
+
+The comparison with the short prompt had a separate rule. Quality had to improve, and the recall interval had to rule out a loss of five percentage points or more. A win against the starting skill did not imply a win against the short prompt.
+
+Failure handling was fixed in advance. A reader report received zero after its allowed attempts failed. An unusable evaluator judgment remained missing. Adverse analyses assigned missing judgments against the revised skill to test whether conclusions depended on them.
+
+\section{First test: the revised skill found more known work}
+All 342 reports had complete reader and evaluator results, with 114 reports for each instruction version, across 39 companies with known tasks and 18 with none.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Instruction version} & \textbf{Mean report quality} & \textbf{Verified task recall} & \textbf{Pooled precision} & \textbf{Reports with proposals} & \textbf{Fully verified reports} \\
+\midrule
+Starting skill & 44.7\% & 28.2\% & 74.5\% & 73 of 114 & 43 of 114 \\
+Revised skill & 53.0\% & 51.7\% & 72.0\% & 89 of 114 & 50 of 114 \\
+Short prompt & 47.1\% & 33.9\% & 55.6\% & 108 of 114 & 28 of 114 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+Against the starting skill, the revised skill gained 8.3 percentage points in quality and 23.5 points in recall. Both intervals were above zero, so the revision passed the planned improvement rule.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Comparison} & \textbf{Quality change, 95\% interval} & \textbf{Recall change, 95\% interval} \\
+\midrule
+Revised skill minus starting skill & +8.3 points [0.3, 16.8] & +23.5 points [13.0, 34.4] \\
+Revised skill minus short prompt & +5.8 points [-2.7, 14.8] & +17.8 points [5.6, 30.0] \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The revised skill found more known tasks than the short prompt, but the quality interval crossed zero. The planned joint advantage over the short prompt was not established.
+
+The revised skill returned proposals in 77 of the 78 runs on companies with known tasks. It also returned proposals more often on companies with no known task. On those empty-answer companies, the starting skill returned no proposals in all 36 runs. The revised skill did so in 24 runs and the short prompt in six, which shows why output volume alone cannot establish better discovery.
+
+The revised skill's pooled precision was slightly lower than the starting skill's: 72.0\% versus 74.5\%. Its higher mean report quality and recall therefore do not mean that every measure improved.
+
+\subsection{What changed in one successful report}
+One test case involved processing website inquiries, where the complete manual task was to review each inquiry and create matching records in Salesforce and Iterable, a marketing platform.
+
+The starting skill proposed Salesforce lead creation and Iterable profile creation separately. Each proposal passed the evidence checks, but neither described the whole known task. The revised skill produced one proposal covering validation, duplicate checks, and creation in both systems. Both evaluators matched it to the complete task.
+
+The records supported three separate inquiries. Ten records helped explain them, but the proposal counted three inquiries, not ten pieces of evidence. It also kept uncertain or duplicate submissions for a person to review.
+
+This case illustrates the difference between the reports. It cannot isolate the effect of the task-scope rule because the test compared complete instruction files.
+
+\section{Further instruction search}
+\subsection{The ten-hour search}
+The second round allowed ten hours of further instruction editing. It sought a replacement for the first-round skill under a fixed selection and test procedure.
+
+The 59 earlier development companies and the 57 companies from the first test supplied 116 practice companies. The first test's result remained unchanged, but its records were no longer independent of the new edits. The second round therefore used new companies for selection and final testing.
+
+Each editing round requested two alternative instruction files. This provided a choice between candidates; the study did not test whether two was the best number.
+
+Both readers tried each valid candidate on 24 practice companies: eight without known tasks and sixteen with known tasks. A promising candidate received another assessment on 24 different practice companies before replacing the current version.
+
+Candidate ranking used the \textbf{harmonic mean} of quality and recall, a score that falls when either measure is low. For example, 80\% quality and 20\% recall give 32\%, whereas 50\% on both give 50\%. Minimum precision and limits on decreases in either measure provided additional selection conditions.
+
+The process completed 62 editing rounds and retained two successive instruction changes. The first required a full list of possible tasks before choosing the final proposals, with one consistent item to count for each task. The second allowed a short first-person completion note to support one occurrence. It also required another evidence check before returning an empty report.
+
+The changes applied to complete instruction files. Their individual effects were not tested. Appendix A gives the candidate counts and selection thresholds.
+
+\subsection{Fresh validation and test sets}
+Before editing began, selection reserved 80 new source groups for validation and 160 for the final test. Each group could supply one company. Previously used groups and matching workflow descriptions were excluded.
+
+Activity generation began only after instruction editing ended, keeping these records out of the editing model's inputs. Construction checks accepted 60 validation companies and 116 final-test companies. Failed groups were not replaced.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Role} & \textbf{Groups selected} & \textbf{Valid synthetic companies} & \textbf{Known tasks} & \textbf{Activity records} \\
+\midrule
+Choose a candidate & 80 & 60 & 109 & 5,045 \\
+Test the chosen candidate & 160 & 116 & 208 & 10,088 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The process saved the current instructions every 75 minutes. The eight saved points contained two distinct revisions. Both were compared with the first-round skill on the 60 validation companies.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Instruction version} & \textbf{Mean report quality} & \textbf{Verified task recall} & \textbf{Pooled precision} \\
+\midrule
+First-round skill & 53.1\% & 54.4\% & 72.2\% \\
+First candidate from round two & 52.3\% & 51.9\% & 72.7\% \\
+Second candidate from round two & 61.8\% & 62.9\% & 77.1\% \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The second candidate passed selection. Its text was fixed before comparison with the first-round skill on the 116 final-test companies. This test assessed whether the selection gains held on new records.
+
+\subsection{Second test: recall rose, but the candidate did not pass}
+Both readers used both instruction versions on all 116 companies, giving 464 scheduled reports. The new candidate produced 232 complete reports, while the first-round skill produced 230 and had two failures, which received zero. There were no missing evaluator scores.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Instruction version} & \textbf{Mean report quality} & \textbf{Verified task recall} & \textbf{Pooled precision} & \textbf{Fully verified reports} \\
+\midrule
+First-round skill & 59.3\% & 59.2\% & 76.0\% & 117 of 232 \\
+Selected round-two candidate & 58.1\% & 65.9\% & 72.4\% & 100 of 232 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The candidate's recall gain was 6.8 percentage points, with a 95\% interval of [0.3, 13.0]. Its quality change was -1.2 points, with an interval of [-6.4, 4.1]. The recall interval was positive, while the quality interval included both a decrease and an increase.
+
+The candidate returned 619 proposals, of which 448 were verified, while the first-round skill returned 441, of which 335 were verified. The candidate therefore found more verified work, but also returned more proposals that failed the checks. Its pooled precision fell, and it produced fewer fully verified reports.
+
+Replacement required positive quality and recall intervals, plus no observed decrease in checks that included pooled precision and fully verified reports, both overall and for each reader. The candidate failed these conditions. \textbf{We retained the first-round skill for distribution.}
+
+The two final tests used different companies and different comparison versions, so their gains must not be added. Appendix B reports each reader separately and shows the effects of the excluded construction cases.
+
+\section{Evaluation checks and limitations}
+\subsection{Evaluator controls}
+Evaluator controls comprised 84 constructed cases: twelve base examples with seven versions each. The variants included a correct proposal, a paraphrase, an unrelated task, a change that left the manual work in place, wrong evidence, missing evidence, and a wrong count. The evaluation code specified the expected answers before scoring.
+
+For example, one test stated that a person entered one invoice and later discussed the same invoice. A proposal that counted six invoices should fail the count check. Another test changed a valid automation into an alert telling the person to keep doing the same task by hand. That version should fail the work-removal check.
+
+Across both evaluator models and the relevant decision fields, there were 528 decisions. Of these, 519 matched the specified answers. Three valid task matches and five valid count decisions were missed. One case with invalid evidence received an "unknown" decision. None of the expected negative or unknown cases received a positive decision.
+
+These expected answers came from the study's test code, not independent user ratings. The control results were reused because the evaluator instructions, models, and scoring rules had not changed.
+
+\subsection{Offline score audit}
+An offline audit recalculated scores from saved proposals, evidence, and evaluator decisions, and checked the identity of the test records. This verified calculations and file consistency, not the correctness of every model judgment.
+
+The first comparison's audit reconstructed 342 final-test scores and 240 development scores. The second round's audit reconstructed 360 validation scores and 464 final-test scores, including the two failed reports, and the final numerical analyses matched the stored results.
+
+The accompanying repository includes the paper, procedure, and aggregate results. It does not distribute the private workflow export, full synthetic activity, or evaluation code. The recorded replay checks therefore cannot substitute for independent reproduction. The first validation record also lists development packets without their file hashes; those packets cannot be verified from the distributed files.
+
+\subsection{Limits of the result}
+The test records were generated rather than collected from teams using the skill. The results measure task recovery and evidence support within those records.
+
+The accepted companies also passed a particular set of construction checks. Rejected cases may differ in ways that matter. The results apply directly to the accepted cases; the sensitivity results in Appendix B show why broader claims would be uncertain.
+
+The readers and evaluators came from the same two model families used during development. Using two evaluators did not make their errors independent. There were no completed human ratings of the final proposals, and the reported intervals did not cover uncertainty from choosing different models.
+
+Several instruction rules changed together. The results compare complete skill versions and do not isolate the effect of the taxonomy or any single rule. An earlier controlled development comparison found no clear advantage for taxonomy feedback over evidence-only feedback; Appendix A reports that result.
+
+Finally, a supported task is not automatically a task worth automating. The study did not measure user demand, time saved, deployment cost, or reliable operation after deployment. A live workflow still needs the user's decision, access to the relevant systems, field mappings, and appropriate handling of uncertain cases.
+
+\section{Conclusion}
+Workflow descriptions provided tasks for synthetic activity, and errors on that activity guided instruction revisions. On a separate test, the first revised skill improved mean report quality and verified task recall relative to the starting skill. A quality advantage over the short prompt was not established.
+
+Further editing produced a candidate with higher recall, but no established quality gain and lower pooled precision. It failed the replacement rule, so the distributed package keeps the first-round procedure.
+
+The practical question remains: do these proposals help people choose useful automations? An evaluation with users must include rejected proposals and measure the work left after deployment.
+
+\clearpage
+\appendix
+\section{Instruction selection details}
+\subsection{Development before the first final test}
+The starting skill came from twelve candidates. Eligibility required complete scores, verified recall of at least one third, and pooled precision of at least 70\%. The eligible candidate with the highest report quality was selected.
+
+The next development step compared the starting skill and the short prompt on 59 companies. The starting skill had 43.2\% quality and 19.6\% recall; the short prompt had 50.2\% quality and 45.2\% recall. This result supplied mistakes to study, but it did not establish that the starting skill was better.
+
+Of those companies, 39 supported four revisions and twenty supported selection. The table below compares the selected revision and its references on the twenty selection companies. Each condition had forty reports; recall used the fourteen companies with known tasks.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Version on selection cases} & \textbf{Mean report quality} & \textbf{Verified task recall} & \textbf{Pooled precision} \\
+\midrule
+Starting skill & 50.4\% & 22.1\% & 76.8\% \\
+Selected revision & 58.2\% & 46.0\% & 77.2\% \\
+Short prompt & 46.8\% & 49.0\% & 56.1\% \\
+\bottomrule
+\end{tabularx}
+\end{center}
+During development, the maximum instruction length changed from 7,000 to 9,000 characters. This admitted three complete drafts already saved, which were reused without another rewrite. The lower limit remained 1,200 characters. The change preceded the final test and did not depend on its results.
+
+The selected instruction body contained 7,684 characters, and the same report-format and occurrence-list instructions were added to all comparison versions. The distributed skill retained the tested text. Package metadata, such as its display name, was separate from those instructions.
+
+\subsection{A check on the role of taxonomy feedback}
+An earlier development comparison tested feedback based on workflow tasks against feedback about evidence alone. It used twelve paired development runs. Of 35 accepted test companies, 27 had complete quality comparisons and seventeen had complete recall comparisons on nonempty answer lists.
+
+Quality changed by +0.3 points, with a 95\% interval of [-10.3, 10.1]; recall changed by -0.9 points, with an interval of [-9.1, 7.0]. The comparison failed its improvement rule. The main result is therefore evidence for the complete revised skill, not for a separate effect of taxonomy feedback.
+
+\subsection{Candidate selection during the second round}
+During the ten-hour editing period, the process created 126 draft plans and obtained 71 valid drafts. Forty-six plans exceeded the allowed input size. Nine others failed the required instruction format after their permitted attempts. The last planned round ended when the time limit was reached.
+
+The audit reconstructed all 4,121 training scores, including one failed report scored as zero. Saved outputs supplied 154 training assessments without new model calls.
+
+To replace the current version during practice, a candidate needed complete scores, at least 65\% pooled precision, and a harmonic-mean gain above 0.005. The last threshold used a 0-to-1 scale, equivalent to more than half a percentage point on a 0-to-100 scale. Quality and recall could each fall by at most three points in the first check and two in the second check.
+
+Two revisions passed this practice rule. Each row below comes from a different second-check group of 24 companies, and the values show the current version followed by its proposed replacement. These are selection results, and the gains cannot be added.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Retained change} & \textbf{Report quality} & \textbf{Verified task recall} & \textbf{Pooled precision} \\
+\midrule
+First instruction change & 57.3\% $\rightarrow$ 65.1\% & 52.9\% $\rightarrow$ 71.9\% & 79.8\% $\rightarrow$ 82.7\% \\
+Second instruction change & 56.6\% $\rightarrow$ 62.2\% & 53.3\% $\rightarrow$ 61.9\% & 76.3\% $\rightarrow$ 77.4\% \\
+\bottomrule
+\end{tabularx}
+\end{center}
+On the 60 new validation companies, a candidate had to match or exceed the first-round skill in quality and recall. It also needed at least 65\% precision, a harmonic-mean gain above 0.005, and complete scores. At most one candidate could be selected. The second candidate passed, and its 7,428-character instruction body was fixed before the last test.
+
+\section{Test composition and uncertainty}
+\subsection{Dataset composition}
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Simulated tool} & \textbf{First final test} & \textbf{Second-round validation} & \textbf{Second final test} \\
+\midrule
+Slack & 1,625 & 1,864 & 3,626 \\
+Notion & 922 & 921 & 1,846 \\
+Linear & 1,292 & 1,272 & 2,467 \\
+Salesforce & 1,005 & 988 & 2,149 \\
+Total records & 4,844 & 5,045 & 10,088 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The first test had 45 English and twelve Spanish companies. Twenty-eight followed conversations and 29 followed daily work. Claude generated 21 companies and GPT generated 36. Thirty-eight companies passed on their first activity-generation attempt.
+
+The answer lists contained zero tasks in eighteen companies, one in fifteen, three in fourteen, four in two, and five in eight. These counts sum to 57 companies and 105 tasks.
+
+The second round's validation set had 41 companies with known tasks and nineteen without them. Its final test had 79 with known tasks and 37 without them. In that final test, the candidate returned proposals in all 158 runs on companies with known tasks, and the first-round skill in 155.
+
+Source selection sought sustained use across several business functions. A selected group needed 10--50 workflows across at least three functions, with at least 70\% having ten successful runs. Additional checks required at least ten qualifying workflows across three functions, a 30-day execution span, and a recent successful run. "Recent" meant within 90 days of 3 September 2026. Accounts marked for solo or non-work use were excluded.
+
+These rules describe the selection method. They do not establish that the selected workflows represent all n8n users or all workplace tasks.
+
+\subsection{Results for each reader}
+The main analysis first averaged the two readers' changes within each company. The following tables show the readers separately. Every change is in percentage points, followed by its 95\% interval.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{First test comparison} & \textbf{Reader} & \textbf{Quality change} & \textbf{Recall change} \\
+\midrule
+Revised minus starting skill & Claude & +6.7 [-4.1, 17.5] & +10.6 [-2.6, 23.8] \\
+Revised minus starting skill & GPT & +9.8 [-3.8, 23.9] & +36.3 [22.1, 50.4] \\
+Revised minus short prompt & Claude & +7.3 [-4.5, 19.6] & +14.2 [0.5, 28.5] \\
+Revised minus short prompt & GPT & +4.4 [-9.3, 17.9] & +21.4 [5.5, 37.4] \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Second test: candidate minus first-round skill} & \textbf{Quality change} & \textbf{Recall change} \\
+\midrule
+Claude & +2.0 [-5.3, 9.2] & +10.9 [2.3, 19.7] \\
+GPT & -4.4 [-12.3, 3.5] & +2.7 [-6.2, 11.4] \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The improvement was not equally clear for both readers. In the first test, both had positive average changes against the starting skill, but several reader-specific intervals crossed zero. In the second test, GPT's average quality change was negative.
+
+\subsection{Sensitivity to construction failures}
+Construction failed for 23 of 80 selected groups in the first test and 44 of 160 in the second. Discovery performance could not be measured for these cases.
+
+Two extreme assignments show how much those exclusions could affect the result. The adverse assignment gives each missing revised-skill score zero and each missing reference score one; the favorable assignment reverses them. The requested task count determines whether an excluded case enters the recall calculation.
+
+These are deliberately extreme assumptions. They do not predict the missing results. They show that the positive finding on accepted companies does not establish a positive finding across every selected group.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{First test, including all 80 selected groups} & \textbf{Assumption} & \textbf{Quality change} & \textbf{Recall change} \\
+\midrule
+Revised minus starting skill & Adverse & -22.9 [-35.4, -10.6] & -19.7 [-35.8, -3.1] \\
+Revised minus starting skill & Favorable & +34.6 [23.9, 45.6] & +50.3 [38.6, 61.6] \\
+Revised minus short prompt & Adverse & -24.6 [-36.8, -12.6] & -23.4 [-39.4, -7.0] \\
+Revised minus short prompt & Favorable & +32.9 [21.6, 44.2] & +46.6 [33.8, 58.9] \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Second test, including all 160 selected groups} & \textbf{Quality change} & \textbf{Recall change} \\
+\midrule
+Adverse assumption & -28.4 [-36.3, -20.5] & -29.7 [-39.8, -19.6] \\
+Favorable assumption & +26.6 [18.7, 34.8] & +38.6 [29.6, 47.5] \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\subsection{Checks used to decide whether to replace the skill}
+The second-round candidate also had to avoid observed decreases on the measures below, both overall and for each reader. The table shows candidate minus first-round skill, in percentage points. These are observed differences, not confidence intervals.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Measure} & \textbf{Both readers} & \textbf{Claude} & \textbf{GPT} \\
+\midrule
+Mean report quality & -1.2 & +2.0 & -4.4 \\
+Verified task recall & +6.8 & +10.9 & +2.7 \\
+Pooled precision & -3.6 & -5.6 & -2.6 \\
+Fully verified report rate & -7.3 & -3.4 & -11.2 \\
+Reports with proposals on companies with known tasks & +1.9 & +3.8 & +0.0 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+Several checks failed. More proposals were not sufficient to justify a replacement.
+
+\section{Model settings and calculation details}
+The same settings applied to the compared instruction versions. Limits are shown here so readers can distinguish changes to the instructions from changes to the model setup.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Setting} & \textbf{Value used} \\
+\midrule
+Readers and evaluators & Claude Sonnet 5 and GPT-5.6 Sol \\
+Claude thinking & Disabled \\
+GPT reasoning effort & Low \\
+Temperature & No override \\
+Maximum proposals in a report & Five \\
+Report output limit & 16,000 tokens \\
+Evaluator output limit & 8,000 tokens \\
+Activity-generation output limit & 32,000 tokens \\
+Attempts per reader or evaluator call & At most two \\
+Concurrent final-test calls & At most six per provider \\
+\bottomrule
+\end{tabularx}
+\end{center}
+A token is a unit of text processed by the model. The output limits capped how much text a call could return, and were not counts of tasks or activity records.
+
+The improvement rules and failure treatment were fixed before test outputs became available. Analysis began after every scheduled report had completed or failed, rather than after a favorable partial result.
+
+There were two planned joint claims in the first test: improvement over the starting skill and superiority to the short prompt. Each required two conditions to pass, and the lower ends of two-sided 95\% intervals corresponded to nominal one-sided error of 2.5\% per joint claim. Across the two claims, the nominal error bound was 5\%. Bootstrap coverage is approximate, so this is a design-level error bound rather than a guarantee.
+
+For missing evaluator scores, the adverse analysis assigned zero to the revised skill and one to its reference, while the favorable analysis did the reverse. Neither final test had missing evaluator scores, so these analyses gave the same estimates as the complete-score analysis. Failed reader reports remained zero as specified.
+
+All displayed percentages and differences are rounded separately from the underlying calculations. Subtracting two displayed percentages can therefore differ by 0.1 points from the displayed paired change. For example, the second test's reported recall gain was 6.8 points even though its rounded means were 65.9\% and 59.2\%.
+
+The first round's new model calls had an estimated cost of US\$105.52, including failed attempts. The second round recorded 20,816 calls, with an estimated cost of US\$821.36 and a further unresolved upper bound of US\$2.02 for eight interrupted calls. These figures exclude previously saved outputs reused in the study, and describe study execution costs, not the cost of running the skill for a user.
+
+\section*{Related work and references}
+WorkArena evaluates agents on tasks assigned to them [1]. This study instead asked an agent to identify possible tasks from mixed activity. Process mining and robotic process mining also study how work can be recovered from event or interaction records [2, 3].
+
+Instruction optimization uses task feedback to improve a text prompt [4--6]. This study applies that approach to a skill that proposes automations. Research on citation support and model-based evaluation motivates separate checks of task identity and cited evidence [7, 8].
+
+\begin{enumerate}
+\item Drouin, Alexandre, Maxime Gasse, Massimo Caccia, et al. 2024. \href{https://proceedings.mlr.press/v235/drouin24a.html}{WorkArena: How Capable Are Web Agents at Solving Common Knowledge Work Tasks?} Proceedings of the 41st International Conference on Machine Learning, 235: 11642--11662.
+\item van der Aalst, Wil M. P. 2016. \href{https://doi.org/10.1007/978-3-662-49851-4}{Process Mining: Data Science in Action}. Second edition. Springer.
+\item Leno, Volodymyr, Artem Polyvyanyy, Marlon Dumas, Marcello La Rosa, and Fabrizio Maria Maggi. 2021. \href{https://doi.org/10.1007/s12599-020-00641-4}{Robotic Process Mining: Vision and Challenges}. Business \& Information Systems Engineering 63: 301--314.
+\item Zhou, Yongchao, Andrei Ioan Muresanu, Ziwen Han, et al. 2023. \href{https://arxiv.org/abs/2211.01910}{Large Language Models Are Human-Level Prompt Engineers}. International Conference on Learning Representations.
+\item Khattab, Omar, Arnav Singhvi, Paridhi Maheshwari, et al. 2024. \href{https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html}{DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines}. International Conference on Learning Representations.
+\item Pryzant, Reid, Dan Iter, Jerry Li, Yin Lee, Chenguang Zhu, and Michael Zeng. 2023. \href{https://doi.org/10.18653/v1/2023.emnlp-main.494}{Automatic Prompt Optimization with "Gradient Descent" and Beam Search}. Proceedings of EMNLP, 7957--7968.
+\item Gao, Tianyu, Howard Yen, Jiatong Yu, and Danqi Chen. 2023. \href{https://doi.org/10.18653/v1/2023.emnlp-main.398}{Enabling Large Language Models to Generate Text with Citations}. Proceedings of EMNLP, 6465--6488.
+\item Zheng, Lianmin, Wei-Lin Chiang, Ying Sheng, et al. 2023. \href{https://arxiv.org/abs/2306.05685}{Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena}. Advances in Neural Information Processing Systems, Datasets and Benchmarks Track.
+\end{enumerate}
+\end{document}

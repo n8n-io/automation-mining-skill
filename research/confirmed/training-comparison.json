@@ -1,0 +1,397 @@
+{
+  "status": "complete",
+  "planned_outputs": 342,
+  "training_improvement_rule": true,
+  "trained_minus_starting": [
+    {
+      "metric": "useful_proposal_quality",
+      "complete": {
+        "companies": 57,
+        "difference": 0.0827485380116959,
+        "ci95": [
+          0.0029239766081871456,
+          0.16754385964912283
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "adverse": {
+        "companies": 57,
+        "difference": 0.0827485380116959,
+        "ci95": [
+          0.0029239766081871456,
+          0.16754385964912283
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "favorable": {
+        "companies": 57,
+        "difference": 0.0827485380116959,
+        "ci95": [
+          0.0029239766081871456,
+          0.16754385964912283
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "excluded_complete_companies": []
+    },
+    {
+      "metric": "verified_task_recall",
+      "complete": {
+        "companies": 39,
+        "difference": 0.23482905982905983,
+        "ci95": [
+          0.1299145299145299,
+          0.34444444444444444
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "adverse": {
+        "companies": 39,
+        "difference": 0.23482905982905983,
+        "ci95": [
+          0.1299145299145299,
+          0.34444444444444444
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "favorable": {
+        "companies": 39,
+        "difference": 0.23482905982905983,
+        "ci95": [
+          0.1299145299145299,
+          0.34444444444444444
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "excluded_complete_companies": []
+    }
+  ],
+  "conditions": {
+    "starting": {
+      "statuses": {
+        "complete": 114
+      },
+      "mean_scores": {
+        "useful_proposal_quality": 0.4470760233918129,
+        "verified_task_recall": 0.28226495726495726,
+        "useful_report_rate": 0.37719298245614036,
+        "verified_proposals": 1.0,
+        "nonempty_output": 0.6403508771929824,
+        "supported_task_recall": 0.3354700854700855
+      },
+      "verified_proposals": 114,
+      "all_proposals": 153,
+      "pooled_verified_precision": 0.7450980392156863,
+      "nonempty_reports": 73.0,
+      "useful_reports": 43.0
+    },
+    "skill": {
+      "statuses": {
+        "complete": 114
+      },
+      "mean_scores": {
+        "useful_proposal_quality": 0.5298245614035088,
+        "verified_task_recall": 0.5170940170940171,
+        "useful_report_rate": 0.43859649122807015,
+        "verified_proposals": 1.3508771929824561,
+        "nonempty_output": 0.7807017543859649,
+        "supported_task_recall": 0.6621794871794872
+      },
+      "verified_proposals": 154,
+      "all_proposals": 214,
+      "pooled_verified_precision": 0.719626168224299,
+      "nonempty_reports": 89.0,
+      "useful_reports": 50.0
+    },
+    "baseline": {
+      "statuses": {
+        "complete": 114
+      },
+      "mean_scores": {
+        "useful_proposal_quality": 0.47134502923976607,
+        "verified_task_recall": 0.3391025641025641,
+        "useful_report_rate": 0.24561403508771928,
+        "verified_proposals": 1.5175438596491229,
+        "nonempty_output": 0.9473684210526315,
+        "supported_task_recall": 0.6089743589743589
+      },
+      "verified_proposals": 173,
+      "all_proposals": 311,
+      "pooled_verified_precision": 0.5562700964630225,
+      "nonempty_reports": 108.0,
+      "useful_reports": 28.0
+    }
+  },
+  "by_reader": {
+    "sonnet": [
+      {
+        "metric": "useful_proposal_quality",
+        "complete": {
+          "companies": 57,
+          "difference": 0.0672514619883041,
+          "ci95": [
+            -0.04093567251461988,
+            0.17543859649122806
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "adverse": {
+          "companies": 57,
+          "difference": 0.0672514619883041,
+          "ci95": [
+            -0.04093567251461988,
+            0.17543859649122806
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "favorable": {
+          "companies": 57,
+          "difference": 0.0672514619883041,
+          "ci95": [
+            -0.04093567251461988,
+            0.17543859649122806
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "excluded_complete_companies": []
+      },
+      {
+        "metric": "verified_task_recall",
+        "complete": {
+          "companies": 39,
+          "difference": 0.10641025641025642,
+          "ci95": [
+            -0.025662393162393143,
+            0.23760683760683762
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "adverse": {
+          "companies": 39,
+          "difference": 0.10641025641025642,
+          "ci95": [
+            -0.025662393162393143,
+            0.23760683760683762
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "favorable": {
+          "companies": 39,
+          "difference": 0.10641025641025642,
+          "ci95": [
+            -0.025662393162393143,
+            0.23760683760683762
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "excluded_complete_companies": []
+      }
+    ],
+    "gpt": [
+      {
+        "metric": "useful_proposal_quality",
+        "complete": {
+          "companies": 57,
+          "difference": 0.09824561403508772,
+          "ci95": [
+            -0.03801169590643274,
+            0.23919590643274835
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "adverse": {
+          "companies": 57,
+          "difference": 0.09824561403508772,
+          "ci95": [
+            -0.03801169590643274,
+            0.23919590643274835
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "favorable": {
+          "companies": 57,
+          "difference": 0.09824561403508772,
+          "ci95": [
+            -0.03801169590643274,
+            0.23919590643274835
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "excluded_complete_companies": []
+      },
+      {
+        "metric": "verified_task_recall",
+        "complete": {
+          "companies": 39,
+          "difference": 0.36324786324786335,
+          "ci95": [
+            0.2213675213675214,
+            0.5042735042735043
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "adverse": {
+          "companies": 39,
+          "difference": 0.36324786324786335,
+          "ci95": [
+            0.2213675213675214,
+            0.5042735042735043
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "favorable": {
+          "companies": 39,
+          "difference": 0.36324786324786335,
+          "ci95": [
+            0.2213675213675214,
+            0.5042735042735043
+          ],
+          "resamples": 10000,
+          "seed": 20260920
+        },
+        "excluded_complete_companies": []
+      }
+    ]
+  },
+  "construction_bounds": [
+    {
+      "metric": "useful_proposal_quality",
+      "complete": {
+        "companies": 57,
+        "difference": 0.0827485380116959,
+        "ci95": [
+          0.0029239766081871456,
+          0.16754385964912283
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "adverse": {
+        "companies": 80,
+        "difference": -0.22854166666666664,
+        "ci95": [
+          -0.35354166666666664,
+          -0.10624739583333337
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "favorable": {
+        "companies": 80,
+        "difference": 0.34645833333333337,
+        "ci95": [
+          0.2385416666666667,
+          0.4563541666666667
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "excluded_complete_companies": [
+        "refinement-test-003",
+        "refinement-test-005",
+        "refinement-test-007",
+        "refinement-test-008",
+        "refinement-test-013",
+        "refinement-test-016",
+        "refinement-test-019",
+        "refinement-test-025",
+        "refinement-test-031",
+        "refinement-test-035",
+        "refinement-test-039",
+        "refinement-test-045",
+        "refinement-test-047",
+        "refinement-test-051",
+        "refinement-test-053",
+        "refinement-test-055",
+        "refinement-test-061",
+        "refinement-test-064",
+        "refinement-test-065",
+        "refinement-test-067",
+        "refinement-test-077",
+        "refinement-test-079",
+        "refinement-test-080"
+      ]
+    },
+    {
+      "metric": "verified_task_recall",
+      "complete": {
+        "companies": 39,
+        "difference": 0.23482905982905983,
+        "ci95": [
+          0.1299145299145299,
+          0.34444444444444444
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "adverse": {
+        "companies": 60,
+        "difference": -0.19736111111111107,
+        "ci95": [
+          -0.3583368055555556,
+          -0.031249999999999986
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "favorable": {
+        "companies": 60,
+        "difference": 0.502638888888889,
+        "ci95": [
+          0.3861076388888889,
+          0.616111111111111
+        ],
+        "resamples": 10000,
+        "seed": 20260920
+      },
+      "excluded_complete_companies": [
+        "refinement-test-003",
+        "refinement-test-005",
+        "refinement-test-007",
+        "refinement-test-008",
+        "refinement-test-013",
+        "refinement-test-016",
+        "refinement-test-019",
+        "refinement-test-031",
+        "refinement-test-035",
+        "refinement-test-039",
+        "refinement-test-045",
+        "refinement-test-047",
+        "refinement-test-051",
+        "refinement-test-053",
+        "refinement-test-055",
+        "refinement-test-061",
+        "refinement-test-064",
+        "refinement-test-067",
+        "refinement-test-077",
+        "refinement-test-079",
+        "refinement-test-080"
+      ]
+    }
+  ],
+  "inputs": {
+    "protocol_sha256": "adbbc3e19066cdd98cb5ec8320d558daf0bc8b738495efef7e8bd353fcdafcb8",
+    "training_comparison_plan_sha256": "c314289bf2bb583ea7224c5a0d4a4465a773b3c3bb07509f2220f8b58f7047bd",
+    "comparison_jobs_sha256": "9f941baa090bfbbc303ecffdffab9ff406af683222e87f911db0d5b4370caa35",
+    "comparison_code_sha256": "92bf6c97a3a0349b2cbb1b7eab7f265801167182a622eb8261442bfbbcb3ef88",
+    "test_freeze_sha256": "2e5b776c212447fa4e86867b0735b46cf2eda2c759298800897ebab47f04620c"
+  },
+  "scope": "Training gains compare the revised skill with the exact starting skill. The planned plain-prompt comparison remains separate."
+}

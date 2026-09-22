@@ -1,0 +1,40 @@
+{
+  "selected": "round-0006-0",
+  "scores": {
+    "reference": {
+      "quality": 0.5305555555555556,
+      "recall": 0.5439024390243903,
+      "precision": 0.7219512195121951,
+      "objective": 0.5371461000063057,
+      "verified_proposals": 148,
+      "proposals": 205,
+      "statuses": {
+        "complete": 120
+      }
+    },
+    "round-0002-0": {
+      "quality": 0.5227777777777778,
+      "recall": 0.5186991869918699,
+      "precision": 0.7265625,
+      "objective": 0.5207304961770817,
+      "verified_proposals": 186,
+      "proposals": 256,
+      "statuses": {
+        "complete": 120
+      }
+    },
+    "round-0006-0": {
+      "quality": 0.6174999999999999,
+      "recall": 0.6292682926829268,
+      "precision": 0.7711598746081505,
+      "objective": 0.6233286056634225,
+      "verified_proposals": 246,
+      "proposals": 319,
+      "statuses": {
+        "complete": 120
+      }
+    }
+  },
+  "selected_guide_sha256": "3842b01850ead0466c0d1453e9eac8db35222c98423a5e425e5073dcdb66156e",
+  "scope": "Candidate selection on 60 new synthetic validation companies, separate from the final test. Each condition has 120 runs with two readers: Claude Sonnet 5 and GPT-5.6 Sol. These are selection results, not release results."
+}

@@ -1,0 +1,1272 @@
+{
+  "score_replays": {
+    "validation": 360,
+    "test": 464
+  },
+  "packets": [
+    {
+      "ref": "search-validation-001",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-002",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-003",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-004",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-005",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-006",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-008",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-009",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-010",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-012",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-013",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-014",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-015",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-016",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-017",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-018",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-019",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-020",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-025",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-026",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-027",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-028",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-029",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-030",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-validation-031",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-validation-032",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-033",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-034",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-036",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-037",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-038",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-040",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-041",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-042",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-043",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-044",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-047",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-validation-048",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-049",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-050",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-051",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-052",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-057",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-058",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-059",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-060",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-061",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-062",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-065",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-066",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-067",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-validation-068",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-069",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-070",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-071",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-072",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-074",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-076",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-078",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-validation-080",
+      "stage": "validation",
+      "outputs": 6,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-081",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-082",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-083",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-084",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-087",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-089",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-090",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-091",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-092",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-093",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-094",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-097",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-098",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-099",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-100",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-101",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-102",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-104",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-105",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-106",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-108",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-109",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-110",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-112",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-113",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-114",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-115",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-116",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-117",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-118",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-119",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-120",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-121",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-122",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-124",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-125",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-126",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-127",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-129",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-130",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-131",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-132",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-136",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-137",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-138",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-139",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-140",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-144",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-145",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-146",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-148",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-150",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-152",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-153",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-154",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-155",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-156",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-160",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-162",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-163",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-164",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-167",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-168",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-169",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-170",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-172",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-173",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-174",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-176",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-178",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-179",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-180",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-181",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-182",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-183",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-184",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-185",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-186",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-187",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-188",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-189",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-190",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-191",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-192",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-193",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-194",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-195",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-196",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-197",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-198",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-199",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-201",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-202",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-204",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-206",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-209",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-210",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-211",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-212",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-214",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-218",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-220",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-221",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-224",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": false
+    },
+    {
+      "ref": "search-test-225",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-226",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-227",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-228",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-230",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-232",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-233",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-234",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-235",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-236",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-237",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    },
+    {
+      "ref": "search-test-238",
+      "stage": "test",
+      "outputs": 4,
+      "dataset_released": true,
+      "packet_released": true
+    }
+  ],
+  "guides": [
+    {
+      "name": "reference",
+      "sha256": "643e810f24cb6aba6d721ceaacd2fff3ae76ac22285e4e2e2c3a15c27360cb87",
+      "released": true,
+      "raw_check_passed": false,
+      "report_schema_sha256": "8347afdcee2a25e76499053c410a449be9ebbebc75ad5c88c5b82b2ece13b436"
+    },
+    {
+      "name": "round-0002-0",
+      "sha256": "d972c714488d23bf26b5ce1c81ddd6991aa11be531c46ffc963ecfccd532784e",
+      "released": true,
+      "raw_check_passed": true,
+      "report_schema_sha256": "8347afdcee2a25e76499053c410a449be9ebbebc75ad5c88c5b82b2ece13b436"
+    },
+    {
+      "name": "round-0006-0",
+      "sha256": "3842b01850ead0466c0d1453e9eac8db35222c98423a5e425e5073dcdb66156e",
+      "released": true,
+      "raw_check_passed": true,
+      "report_schema_sha256": "8347afdcee2a25e76499053c410a449be9ebbebc75ad5c88c5b82b2ece13b436"
+    }
+  ],
+  "guide_privacy_source_rows": 18041,
+  "guide_privacy_scope": "All saved prior source forms, including different versions of the same workflow pair.",
+  "guide_schema_scope": "The unchanged report schema accompanies every guide check. The fixed gate exempts actual schema keys; raw checks also remain recorded.",
+  "source_lineage_sha256": "322ee6c42abc1341eeca2a7ed0d546002265db9f9625653d323302c7e3bf01a7",
+  "numeric_sha256": "75447386abe6353b59203865a508617d481297ecad166c8241de6f86d184d459",
+  "analysis_sha256": "da1ba401f8ab1e37ce50230eb1d7b207f0472eabbf52412db1e158cf60c8ab52",
+  "release_code_sha256": "9b8ef38f76c3c0d39665e463622753d329b9f91e40d5966f1287e0f91c4a364f",
+  "skill_release_check_sha256": "c9df5c8868582ee626ed967f417b9e1dc6d77fd75f8c4b02fed9bc04c7929094",
+  "scope": "Every measured score is rebuilt. All numeric results remain; source-text failures withhold only text packets."
+}
