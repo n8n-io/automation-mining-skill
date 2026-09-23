@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+The project now uses the [Apache License 2.0](LICENSE), which adds an explicit
+patent grant. Releases up to v1.0.0 remain available under the MIT License.
+The study is now called a whitepaper. Its source moved to `whitepaper/`, and the
+release download is now `automation-mining-whitepaper-vX.Y.Z.pdf`.
+
 ## v1.0.0 — 2026-09-22
 
 **Your next useful automation is already hiding in your work.**
@@ -41,7 +48,7 @@ download. Choose your route in the [installation guide](docs/installation.md).
 
 ### Read the evidence
 
-This release includes the [paper](paper/taxonomy_skill.pdf), version 3, its
+This release includes the [whitepaper](whitepaper/taxonomy_skill.pdf), version 3, its
 LaTeX source, and aggregate study records. The procedure was tested on
 **57 synthetic companies** with two reader models. The study does not measure
 the full interactive flow or time saved in use. See the [method](METHOD.md)

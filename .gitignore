@@ -15,11 +15,11 @@ automation-mining-20*.md
 report.json
 routine-report.json
 
-# Keep paper build output outside the source tree.
-paper/*.aux
-paper/*.log
-paper/*.out
-paper/*.synctex.gz
+# Keep whitepaper build output outside the source tree.
+whitepaper/*.aux
+whitepaper/*.log
+whitepaper/*.out
+whitepaper/*.synctex.gz
 
 # Keep source exports outside this repository.
 *.csv

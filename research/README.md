@@ -1,7 +1,7 @@
 # Study records
 
 These files contain aggregate results and validation records for the procedure
-in [the paper](../paper/taxonomy_skill.pdf). The package retains the procedure
+in [the whitepaper](../whitepaper/taxonomy_skill.pdf). The package retains the procedure
 confirmed in the first test. The second test did not support a further release.
 
 | Record | Contents |
@@ -22,10 +22,10 @@ The private workflow export, full synthetic datasets, model responses, and
 evaluation code are not distributed here. The records document the reported
 checks; they are not enough to repeat the complete study independently.
 
-The manifest identifies the 15 study, procedure, and paper files it lists by
+The manifest identifies the 15 study, procedure, and whitepaper files it lists by
 size and SHA-256 hash. It does not cover the full repository.
 Private repository names, commit IDs, and source paths are omitted. Study notes were updated to remove private history references and to define
-the comparison, validation, and version scopes. Their hashes were updated. Study results and the tested procedure are unchanged. Paper version 3 revises language and structure; its numeric table entries
+the comparison, validation, and version scopes. Their hashes were updated. Study results and the tested procedure are unchanged. Whitepaper version 3 revises language and structure; its numeric table entries
 and study results are unchanged. See [METHOD.md](../METHOD.md) for the design and limits.
 
 ## Read the comparisons correctly

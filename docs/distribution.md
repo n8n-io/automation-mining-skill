@@ -42,11 +42,11 @@ the quality of a mining run. Use a separate evaluation for procedure changes.
 | --- | --- |
 | `automation-mining-vX.Y.Z.zip` | Skill, references, display metadata, and license |
 | `automation-mining-plugin-vX.Y.Z.zip` | Skill, plugin manifests, marketplace files, and display images |
-| `automation-mining-paper-vX.Y.Z.pdf` | Current paper revision |
+| `automation-mining-whitepaper-vX.Y.Z.pdf` | Current whitepaper revision |
 | `SHA256SUMS` | SHA-256 checksums for all three downloads |
 | `RELEASE_NOTES.md` | Changelog entry with links fixed to the release tag |
 
-The paper and study records stay out of the installable archives. The repository
+The whitepaper and study records stay out of the installable archives. The repository
 contains those records. The plugin archive includes only the images needed for
 its display. The README graphics and social preview remain in `assets/`.
 
@@ -65,7 +65,7 @@ These fields have different schemas; do not copy one format into the other.
    Codex source tag, skill metadata, and copied license.
 3. Replace `Unreleased` in `CHANGELOG.md` with the release date. Update the
    version in `CITATION.cff`. Add the top-level `date-released` field for the
-   first release; update it on later releases. Set its paper URL to the release tag.
+   first release; update it on later releases. Set its whitepaper URL to the release tag.
 4. Run the checks above and review the packages.
 5. Check the repository description, homepage, and social preview in GitHub
    settings.
@@ -99,14 +99,14 @@ publication. This flag does not affect Git or ZIP installation.
 
 ## Preserve the measured procedure
 
-The procedure, schema, paper, and study records have fixed hashes in
+The procedure, schema, whitepaper, and study records have fixed hashes in
 `research/manifest.json`. Keep their bytes unchanged for a distribution change.
 See the [study record guide](../research/README.md) for file details and access limits.
 
-To build the paper, use [Tectonic](https://tectonic-typesetting.github.io/en-US/):
+To build the whitepaper, use [Tectonic](https://tectonic-typesetting.github.io/en-US/):
 
 ```sh
-cd paper
+cd whitepaper
 tectonic -X compile taxonomy_skill.tex
 ```
 
@@ -116,5 +116,5 @@ PDF during an unrelated package change.
 
 ## License
 
-The package uses the [MIT License](../LICENSE). Both installable archives include
+The package uses the [Apache License 2.0](../LICENSE). Both installable archives include
 its full text. The package check compares the skill license with the root license.

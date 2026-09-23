@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Find repeated manual work in activity records. Get automation proposals with evidence and work counts for your review.",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/n8n-io/automation-mining-skill.git"

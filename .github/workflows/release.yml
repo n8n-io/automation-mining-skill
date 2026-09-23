@@ -62,7 +62,7 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          assets=("dist/automation-mining-${RELEASE_TAG}.zip" "dist/automation-mining-plugin-${RELEASE_TAG}.zip" "dist/automation-mining-paper-${RELEASE_TAG}.pdf" dist/SHA256SUMS)
+          assets=("dist/automation-mining-${RELEASE_TAG}.zip" "dist/automation-mining-plugin-${RELEASE_TAG}.zip" "dist/automation-mining-whitepaper-${RELEASE_TAG}.pdf" dist/SHA256SUMS)
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
             test "$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)" = true
             gh release upload "$RELEASE_TAG" "${assets[@]}" --clobber

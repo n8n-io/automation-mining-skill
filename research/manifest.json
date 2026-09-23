@@ -1,12 +1,12 @@
 {
-  "scope": "Hashes cover only the 15 study, procedure, and paper files listed here. Private repository names, commit IDs, and source paths are omitted. Metadata notes define instruction counts, comparisons, validation limits, and study versions. Study results and the tested procedure are unchanged.",
+  "scope": "Hashes cover only the 15 study, procedure, and whitepaper files listed here. Private repository names, commit IDs, and source paths are omitted. Metadata notes define instruction counts, comparisons, validation limits, and study versions. Study results and the tested procedure are unchanged.",
   "files": {
-    "paper/taxonomy_skill.pdf": {
+    "whitepaper/taxonomy_skill.pdf": {
       "sha256": "815c636ac144b53805d7cd0fb8dc5ac4e40d00678dc75d951a5b1bee482a7ed7",
       "bytes": 79665,
       "changes": "Editorial revision 3. Revise language and structure; clarify comparison and validation scopes. Preserve all numeric table entries, study results, and references."
     },
-    "paper/taxonomy_skill.tex": {
+    "whitepaper/taxonomy_skill.tex": {
       "sha256": "df81437b8969f65fc8f06234ab8c47f54579bfed87e1d820a574853c4e41f1f0",
       "bytes": 51442,
       "changes": "Editorial revision 3. Revise language and structure; clarify comparison and validation scopes. Preserve all numeric table entries, study results, and references."
@@ -64,7 +64,7 @@
       "bytes": 793
     }
   },
-  "paper_revision": {
+  "whitepaper_revision": {
     "version": 3,
     "date": "2026-09-22",
     "changes": "Editorial revision. Numeric table entries, study results, and references are unchanged. The tested procedure is unchanged."

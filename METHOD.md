@@ -97,7 +97,7 @@ comparison. Each test uses its own dataset and reference.
 - [Tested procedure](skills/automation-mining/references/workflow-discovery.md),
   [report schema](skills/automation-mining/references/workflow-discovery.schema.json), and
   [source hashes](skills/automation-mining/references/workflow-discovery.artifact.json).
-- [Paper PDF](paper/taxonomy_skill.pdf) and [LaTeX source](paper/taxonomy_skill.tex),
+- [Whitepaper PDF](whitepaper/taxonomy_skill.pdf) and [LaTeX source](whitepaper/taxonomy_skill.tex),
   with all tables, references, and TikZ diagrams in one source file.
 - [Confirmed training comparison](research/confirmed/training-comparison.json)
   and [confirmed release checks](research/confirmed/release-validation.json).
@@ -125,12 +125,12 @@ explicitly synthetic exports. Real exports and connected activity use the
 owner-review flow. This prevents the test procedure's fictional-data assumption
 from being applied to actual activity.
 
-Paper version 3 is an editorial revision dated 22 September 2026. It revises
+Whitepaper version 3 is an editorial revision dated 22 September 2026. It revises
 language and structure, clarifies the two first-test comparisons, and states
 the validation-record limits. Numeric table entries, study results, and the
 tested procedure are unchanged.
 
-The manifest records the hashes of the 15 study, procedure, and paper files
+The manifest records the hashes of the 15 study, procedure, and whitepaper files
 it lists. It does not cover the full repository. Private repository references
 are omitted. Metadata notes define instruction counts, comparisons, validation
 limits, and study versions.
@@ -139,10 +139,10 @@ The private workflow export, complete synthetic datasets, model responses, and
 evaluation code are not distributed here. The bundled records document the
 reported checks. They do not let readers repeat the complete study independently.
 
-Build the paper from this repository with Tectonic:
+Build the whitepaper from this repository with Tectonic:
 
 ```sh
-cd paper
+cd whitepaper
 tectonic -X compile taxonomy_skill.tex
 ```
 

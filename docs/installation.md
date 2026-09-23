@@ -92,7 +92,7 @@ agent's skills directory:
 
 The skill ZIP includes the skill, its references, display metadata, and license.
 The plugin ZIP also includes the plugin manifests, marketplace files, and images.
-The paper is a separate PDF download.
+The whitepaper is a separate PDF download.
 
 Download `SHA256SUMS` and the three release files to one folder. Check them on macOS:
 

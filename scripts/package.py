@@ -140,11 +140,11 @@ def build():
     archive(skill_zip, [(p, (Path('automation-mining') / p.relative_to(SKILL)).as_posix()) for p in SKILL_FILES])
     plugin_zip = out / f'automation-mining-plugin-v{value}.zip'
     archive(plugin_zip, [(p, (Path('automation-mining') / p).as_posix()) for p in PLUGIN_FILES])
-    paper = out / f'automation-mining-paper-v{value}.pdf'
-    paper.write_bytes((ROOT / 'paper/taxonomy_skill.pdf').read_bytes())
+    whitepaper = out / f'automation-mining-whitepaper-v{value}.pdf'
+    whitepaper.write_bytes((ROOT / 'whitepaper/taxonomy_skill.pdf').read_bytes())
     checksums = out / 'SHA256SUMS'
     checksums.write_text(''.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}\n'
-                                for p in [skill_zip, plugin_zip, paper]), encoding='utf-8', newline='\n')
+                                for p in [skill_zip, plugin_zip, whitepaper]), encoding='utf-8', newline='\n')
     changelog = (ROOT / 'CHANGELOG.md').read_text(encoding="utf-8")
     entry = changelog.split(f'## v{value} — ', 1)[1].split('\n', 1)[1].split('\n## ', 1)[0].strip()
     entry = re.sub(r'\]\((?![a-z]+:|#)([^)]+)\)',
@@ -153,10 +153,10 @@ def build():
         f'# Automation mining v{value}\n\n'
         'Find repeated manual work in activity records and choose what to automate.\n\n'
         + entry + '\n\nDownload the skill ZIP for manual installation or the plugin ZIP '
-        'for native packages. The paper is a separate PDF. Verify the downloads with SHA256SUMS. '
+        'for native packages. The whitepaper is a separate PDF. Verify the downloads with SHA256SUMS. '
         f'See the [README](https://github.com/n8n-io/automation-mining-skill/blob/v{value}/README.md) '
         'for installation instructions.\n', encoding='utf-8', newline='\n')
-    print(f'Built {skill_zip.name}, {plugin_zip.name}, the paper, checksums, and release notes.')
+    print(f'Built {skill_zip.name}, {plugin_zip.name}, the whitepaper, checksums, and release notes.')
 
 
 if __name__ == '__main__':

@@ -20,12 +20,12 @@ data exports, and development notes outside the repository.
 
 ## Preserve the study record
 
-The tested procedure, schema, paper, and aggregate result files have hashes in
+The tested procedure, schema, whitepaper, and aggregate result files have hashes in
 `research/manifest.json`. A package or documentation change must preserve those
 files. A new procedure needs its own evaluation and source record; it must not
 inherit claims from a different tested version.
 
-Changes use the repository's [MIT License](LICENSE).
+Changes use the repository's [Apache License 2.0](LICENSE).
 
 ## Check a claim before changing it
 

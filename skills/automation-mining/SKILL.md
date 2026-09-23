@@ -8,7 +8,7 @@ description: >-
   channel", "what could we automate", "find repeated manual work in these
   records". Do not use when the user already knows what to build, or wants
   ideas without granting read access; that is an interview, answer it directly.
-license: MIT
+license: Apache-2.0
 metadata:
   version: "1.0.0"
 ---

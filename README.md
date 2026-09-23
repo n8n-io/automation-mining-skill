@@ -6,7 +6,7 @@
   <a href="https://automation-mining-skill.pages.dev/">Website</a> ·
   <a href="#quick-start"><strong>Install the skill</strong></a> ·
   <a href="examples/laptop-requests/README.md">Try the example</a> ·
-  <a href="paper/taxonomy_skill.pdf">Read the paper</a> ·
+  <a href="whitepaper/taxonomy_skill.pdf">Read the whitepaper</a> ·
   <a href="docs/installation.md">Installation guide</a>
 </p>
 
@@ -24,7 +24,7 @@ what to build.
 
 An **n8n labs** experiment for Claude Code, Codex, Cursor, Pi, and other agents
 that support [Agent Skills](https://agentskills.io/home). Open source under the
-[MIT License](LICENSE).
+[Apache License 2.0](LICENSE).
 
 ## Quick start
 
@@ -119,8 +119,8 @@ A report can be empty when the records do not support a useful proposal.
 ## The method, measured
 
 The skill includes the procedure tested in **[Improving Automation Discovery
-with a Workflow Taxonomy](paper/taxonomy_skill.pdf)**, by Albert Alises, n8n.
-The repository includes the latest reviewed paper, version 3, and its LaTeX source.
+with a Workflow Taxonomy](whitepaper/taxonomy_skill.pdf)**, by Albert Alises, n8n.
+The repository includes the latest reviewed whitepaper, version 3, and its LaTeX source.
 
 The study used a taxonomy of **907,353 workflow rows** to define tasks and create
 synthetic activity. Feedback changed the skill instructions; model weights
@@ -136,7 +136,7 @@ measure the full interactive flow, user demand, or time saved in use. A later
 revision failed the release rule, so this package keeps the confirmed procedure.
 A separate comparison with a short prompt did not establish a quality gain.
 
-[Paper PDF](paper/taxonomy_skill.pdf) · [Method and limitations](METHOD.md) ·
+[Whitepaper PDF](whitepaper/taxonomy_skill.pdf) · [Method and limitations](METHOD.md) ·
 [Study records](research/README.md) · [Citation](CITATION.cff)
 
 ## Your data and your control
@@ -164,4 +164,4 @@ Use synthetic examples and remove private data before sharing.
 ---
 
 [Install and update](docs/installation.md) · [Contribute](CONTRIBUTING.md) ·
-[Release notes](CHANGELOG.md) · [Security](SECURITY.md) · [MIT License](LICENSE)
+[Release notes](CHANGELOG.md) · [Security](SECURITY.md) · [Apache License 2.0](LICENSE)

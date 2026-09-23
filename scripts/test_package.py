@@ -32,8 +32,8 @@ class PackageTests(unittest.TestCase):
             for line in (root / 'dist/SHA256SUMS').read_text().splitlines():
                 digest, name = line.split('  ')
                 self.assertEqual(digest, hashlib.sha256((root / 'dist' / name).read_bytes()).hexdigest())
-            self.assertEqual((root / f'dist/automation-mining-paper-v{value}.pdf').read_bytes(),
-                             (root / 'paper/taxonomy_skill.pdf').read_bytes())
+            self.assertEqual((root / f'dist/automation-mining-whitepaper-v{value}.pdf').read_bytes(),
+                             (root / 'whitepaper/taxonomy_skill.pdf').read_bytes())
             self.assertNotRegex((root / 'dist/RELEASE_NOTES.md').read_text(), r'\]\((?:docs/|METHOD)')
 
     def test_links_require_existing_files_and_headings(self):
@@ -71,7 +71,7 @@ class PackageTests(unittest.TestCase):
             (root / '.agents/plugins').mkdir(parents=True)
             (root / 'package.json').write_text('{"version":"1.0.0"}', encoding='utf-8')
             (root / '.agents/plugins/marketplace.json').write_text('{"plugins":[{"source":{"ref":"main"}}]}', encoding='utf-8')
-            (root / 'LICENSE').write_bytes(b'MIT License\n')
+            (root / 'LICENSE').write_bytes(b'Apache License\n')
             for manifest in package.MANIFESTS:
                 path = root / manifest
                 path.parent.mkdir()
@@ -83,7 +83,7 @@ class PackageTests(unittest.TestCase):
             self.assertIn('Café → report'.encode('utf-8'), skill.read_bytes())
             self.assertIn(b'version: "1.0.0"', skill.read_bytes())
             self.assertNotIn(b'\r', skill.read_bytes())
-            self.assertEqual((root / package.SKILL / 'LICENSE').read_bytes(), b'MIT License\n')
+            self.assertEqual((root / package.SKILL / 'LICENSE').read_bytes(), b'Apache License\n')
 
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@
     "url": "https://n8n.io"
   },
   "repository": "https://github.com/n8n-io/automation-mining-skill",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "skills": "./skills/",
   "interface": {
     "displayName": "Automation mining",

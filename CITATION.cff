@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "To cite the study, use the paper below."
+message: "To cite the study, use the whitepaper below."
 type: software
 title: Automation mining
 version: 1.0.0
 date-released: 2026-09-22
 url: https://github.com/n8n-io/automation-mining-skill
-license: MIT
+license: Apache-2.0
 authors:
   - name: n8n
 preferred-citation:
