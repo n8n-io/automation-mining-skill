@@ -12,15 +12,16 @@
 
 # Automation mining
 
-**Your next useful automation is already hiding in your work.**
+**Discover what you could automate.**
 
-The request you copy into a tracker. The question you answer every week. The
-report you put together every Friday. Give this skill to your agent, point it at
-one place you work, and find the repeated work worth automating.
+Requests you copy into a tracker. Questions you answer every week. Reports you
+assemble by hand. Automation Mining helps your agent find this work in activity
+it can read and show you what an automation could do.
 
-You get **up to five proposals**, each with the source records, a count of work
-instances, and a clear description of what an automation could do. You choose
-what to build.
+Give it one work source. It finds repeated manual tasks and returns **up to five
+proposals**. Each proposal includes source records, a count of work instances,
+and a clear description of the change. You check the evidence and choose what
+to build.
 
 An **n8n labs** experiment for Claude Code, Codex, Cursor, Pi, and other agents
 that support [Agent Skills](https://agentskills.io/home). Open source under the
@@ -116,27 +117,29 @@ a decision, an owner, or a document first.
 Run time and model cost depend on the agent, tools, and number of records.
 A report can be empty when the records do not support a useful proposal.
 
-## The method, measured
+## How we tested the method
 
-The skill includes the procedure tested in **[Improving Automation Discovery
-with a Workflow Taxonomy](whitepaper/taxonomy_skill.pdf)**, by Albert Alises, n8n.
-The repository includes the latest reviewed whitepaper, version 3, and its LaTeX source.
+The released skill includes the procedure tested in **[Improving Automation
+Discovery with a Workflow Taxonomy](whitepaper/taxonomy_skill.pdf)**, by Albert
+Alises, n8n. The repository includes the reviewed whitepaper and its LaTeX source.
 
-The study used a taxonomy of **907,353 workflow rows** to define tasks and create
-synthetic activity. Feedback changed the skill instructions; model weights
-stayed fixed. A separate test used **57 synthetic companies** and two reader models.
+The study used a taxonomy of **907,353 workflow rows** to define tasks and make
+synthetic activity. Feedback changed the skill instructions; it did not change
+model weights. A separate test used **57 synthetic companies** and two AI models
+to read their activity.
 
 | Measure | Starting procedure | Included procedure | Change, with 95% interval |
 | --- | ---: | ---: | ---: |
 | Useful proposal quality | 44.7% | **53.0%** | +8.3 points [0.3, 16.8] |
 | Verified task recall | 28.2% | **51.7%** | +23.5 points [13.0, 34.4] |
 
-These results apply to the procedure on synthetic exports. The study does not
-measure the full interactive flow, user demand, or time saved in use. A later
-revision failed the release rule, so this package keeps the confirmed procedure.
-A separate comparison with a short prompt did not establish a quality gain.
+These results compare the released procedure with its starting version on
+synthetic records. They do not measure the full interactive flow or time saved
+by real teams. A later procedure did not pass the release rule, so the package
+keeps the confirmed version. A separate comparison with a short prompt did not
+show a clear gain in proposal quality.
 
-[Whitepaper PDF](whitepaper/taxonomy_skill.pdf) · [Method and limitations](METHOD.md) ·
+[Whitepaper PDF](whitepaper/taxonomy_skill.pdf) · [Method and limits](METHOD.md) ·
 [Study records](research/README.md) · [Citation](CITATION.cff)
 
 ## Your data and your control
